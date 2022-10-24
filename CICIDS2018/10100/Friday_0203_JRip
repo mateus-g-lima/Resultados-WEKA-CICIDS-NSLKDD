@@ -1,0 +1,122 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     Friday-02-03-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1
+Instances:    104858
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(Dst Port >= 8080) and (Dst Port <= 8080) => Label=Bot (28153.0/1.0)
+(Dst Port >= 50707) and (RST Flag Cnt >= 1) and (Dst Port <= 51981) => Label=Bot (440.0/0.0)
+(Dst Port <= 0) and (Flow IAT Min <= 27) and (Tot Fwd Pkts <= 98) => Label=Bot (15.0/1.0)
+(Dst Port <= 0) and (Fwd IAT Std >= 5176490.16) and (Fwd IAT Mean <= 2951393.742) => Label=Bot (8.0/0.0)
+(Dst Port >= 50637) and (Bwd Pkt Len Mean >= 163) => Label=Bot (4.0/1.0)
+ => Label=Benign (76238.0/2.0)
+
+Number of Rules : 6
+
+
+Time taken to build model: 17.68 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 10.22 seconds
+
+=== Summary ===
+
+Correctly Classified Instances     1048438               99.9869 %
+Incorrectly Classified Instances       137                0.0131 %
+Kappa statistic                          0.9997
+Mean absolute error                      0.0002
+Root mean squared error                  0.0114
+Relative absolute error                  0.0461 %
+Root relative squared error              2.5696 %
+Total Number of Instances          1048575     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Benign
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Bot
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 762337     47 |      a = Benign
+     90 286101 |      b = Bot
+

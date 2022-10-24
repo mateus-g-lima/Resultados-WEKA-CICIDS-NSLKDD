@@ -1,0 +1,160 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     Wednesday-21-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+Fwd Pkt Len Std < 212.27
+|   TotLen Fwd Pkts < 374.5
+|   |   Idle Mean < 3001957.5
+|   |   |   Fwd IAT Min < 57.5
+|   |   |   |   Bwd Pkts/s < 13015.87
+|   |   |   |   |   Fwd IAT Mean < 10111.75
+|   |   |   |   |   |   Tot Fwd Pkts < 1.5 : Benign (29/0)
+|   |   |   |   |   |   Tot Fwd Pkts >= 1.5
+|   |   |   |   |   |   |   Fwd Header Len < 84
+|   |   |   |   |   |   |   |   Fwd Seg Size Avg < 50.5
+|   |   |   |   |   |   |   |   |   Dst Port < 51 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   Dst Port >= 51
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 15.5
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 14.5 : DDOS attack-HOIC (77/0)
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 14.5
+|   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 17233 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 17233 : DDOS attack-HOIC (6/0)
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 15.5 : DDOS attack-HOIC (82/0)
+|   |   |   |   |   |   |   |   Fwd Seg Size Avg >= 50.5 : DDOS attack-HOIC (131/0)
+|   |   |   |   |   |   |   Fwd Header Len >= 84 : Benign (3/0)
+|   |   |   |   |   Fwd IAT Mean >= 10111.75 : Benign (33/0)
+|   |   |   |   Bwd Pkts/s >= 13015.87 : Benign (88/0)
+|   |   |   Fwd IAT Min >= 57.5
+|   |   |   |   Flow IAT Mean < 48901.75
+|   |   |   |   |   Init Fwd Win Byts < 30969 : Benign (21/0)
+|   |   |   |   |   Init Fwd Win Byts >= 30969 : DDOS attack-HOIC (685088/0)
+|   |   |   |   Flow IAT Mean >= 48901.75
+|   |   |   |   |   Fwd IAT Mean < 84680.5 : DDOS attack-HOIC (627/0)
+|   |   |   |   |   Fwd IAT Mean >= 84680.5
+|   |   |   |   |   |   Flow IAT Mean < 89169.94
+|   |   |   |   |   |   |   Fwd Pkt Len Mean < 2
+|   |   |   |   |   |   |   |   Fwd IAT Mean < 93171
+|   |   |   |   |   |   |   |   |   Dst Port < 51 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   Dst Port >= 51 : DDOS attack-HOIC (1/0)
+|   |   |   |   |   |   |   |   Fwd IAT Mean >= 93171 : Benign (37/0)
+|   |   |   |   |   |   |   Fwd Pkt Len Mean >= 2 : Benign (2/0)
+|   |   |   |   |   |   Flow IAT Mean >= 89169.94 : Benign (64/0)
+|   |   Idle Mean >= 3001957.5 : Benign (614/0)
+|   TotLen Fwd Pkts >= 374.5
+|   |   Tot Fwd Pkts < 431 : Benign (1392/0)
+|   |   Tot Fwd Pkts >= 431 : DDOS attack-LOIC-UDP (1730/0)
+Fwd Pkt Len Std >= 212.27 : Benign (358547/0)
+
+Size of the tree : 43
+
+Time taken to build model: 11.53 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.24 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      356513               99.9994 %
+Incorrectly Classified Instances         2                0.0006 %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0.0019
+Relative absolute error                  0.0012 %
+Root relative squared error              0.4975 %
+Total Number of Instances           356515     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Benign
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     DDOS attack-LOIC-UDP
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     DDOS attack-HOIC
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c   <-- classified as
+ 122481      0      1 |      a = Benign
+      0    615      0 |      b = DDOS attack-LOIC-UDP
+      1      0 233417 |      c = DDOS attack-HOIC
+

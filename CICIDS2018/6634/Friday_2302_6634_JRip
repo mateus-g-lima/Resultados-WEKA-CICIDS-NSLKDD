@@ -1,0 +1,145 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     Friday-23-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R3
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(Bwd Pkt Len Std >= 881.028329) => Label=SQL Injection (19.0/0.0)
+(Fwd Pkts/s >= 27397.260274) and (Dst Port <= 80) and (Init Fwd Win Byts >= 2051) and (Init Fwd Win Byts <= 2053) and (Flow IAT Min >= 45) => Label=SQL Injection (8.0/0.0)
+(Flow Byts/s <= 438.085738) and (ECE Flag Cnt >= 1) and (Dst Port <= 80) and (Fwd Pkt Len Max <= 603) => Label=SQL Injection (15.0/6.0)
+(Pkt Len Mean <= 122.444444) and (RST Flag Cnt >= 1) and (Fwd Pkt Len Mean >= 165) => Label=SQL Injection (3.0/0.0)
+(Bwd Pkt Len Mean >= 1791.714286) => Label=Brute Force -XSS (72.0/0.0)
+(Tot Bwd Pkts <= 0) and (Dst Port <= 80) and (Init Fwd Win Byts >= 2053) and (Init Fwd Win Byts <= 2053) and (Flow Duration >= 28) => Label=Brute Force -XSS (71.0/0.0)
+(Pkt Len Min >= 500) and (Flow IAT Max <= 41990102) and (Idle Min >= 7200353) and (Flow IAT Min <= 4000190) => Label=Brute Force -XSS (4.0/0.0)
+(Fwd Pkt Len Mean >= 353.519481) and (TotLen Bwd Pkts >= 72471) => Label=Brute Force -Web (61.0/0.0)
+(Pkt Len Min >= 500) and (Active Mean >= 4000386) and (Flow IAT Max <= 41990312) and (Flow IAT Max >= 41990267) and (Flow IAT Std <= 15345114.424994) and (Idle Min <= 7200417) => Label=Brute Force -Web (10.0/0.0)
+(Pkt Len Min >= 500) and (Idle Mean <= 21369816) and (Flow Duration >= 89479476) and (Flow IAT Max <= 41990331) and (Flow Duration <= 89479511) and (Flow IAT Min <= 4000262) => Label=Brute Force -Web (10.0/0.0)
+(Pkt Len Min >= 500) and (Active Mean >= 4000364) and (Idle Std >= 15281169.406067) and (Flow Duration <= 89480278) => Label=Brute Force -Web (20.0/8.0)
+(Pkt Len Min >= 500) and (Flow IAT Mean <= 17895945.6) and (Active Mean >= 4000275) and (Flow IAT Min <= 4000287) and (Flow Duration <= 89479642) and (Flow Duration >= 89479581) and (Flow IAT Min >= 4000280) and (Flow IAT Std <= 15345170.063672) => Label=Brute Force -Web (7.0/0.0)
+(Pkt Len Min >= 500) and (Idle Min >= 7200402) and (Flow Duration <= 89479722) and (Flow IAT Std >= 15345199.414319) => Label=Brute Force -Web (8.0/2.0)
+(Pkt Len Min >= 500) and (Flow IAT Max <= 41990357) and (Idle Mean <= 21369815) and (Idle Min <= 7200267) and (Flow IAT Min <= 4000392) and (Flow Duration >= 89479571) => Label=Brute Force -Web (8.0/0.0)
+(Pkt Len Min >= 500) and (Idle Min >= 7200306) and (Idle Min <= 7200320) and (Flow IAT Min <= 4000298) and (Flow Duration >= 89479498) and (Idle Mean <= 21369827.25) => Label=Brute Force -Web (8.0/0.0)
+(Pkt Len Min >= 500) and (Flow IAT Max <= 41990306) and (Flow Byts/s >= 33.527212) and (Idle Mean >= 21369807) and (Flow IAT Min >= 4000269) and (Flow IAT Std >= 15345115.788146) => Label=Brute Force -Web (7.0/1.0)
+(Pkt Len Min >= 500) and (Idle Std <= 15281062.430344) and (Idle Min >= 7200402) and (Idle Min <= 7200406) and (Flow IAT Max >= 41990295) and (Idle Mean >= 21369843) => Label=Brute Force -Web (7.0/0.0)
+(Fwd Pkt Len Mean >= 161.5) and (Fwd Pkt Len Mean <= 161.5) and (Tot Fwd Pkts <= 4) => Label=Brute Force -Web (30.0/0.0)
+(Pkt Len Min >= 500) and (Idle Min >= 7200427) and (Idle Min <= 7200427) and (Flow Duration <= 89479698) => Label=Brute Force -Web (6.0/0.0)
+(Pkt Len Min >= 500) and (Idle Min >= 7200251) and (Idle Min <= 7200268) and (Idle Mean <= 21369778.25) and (Flow Duration >= 89479376) => Label=Brute Force -Web (6.0/0.0)
+(Pkt Len Min >= 500) and (Flow Duration >= 89479663) and (Flow IAT Min <= 4000249) and (Idle Mean <= 21369856.75) => Label=Brute Force -Web (5.0/1.0)
+(Pkt Len Min >= 500) and (Flow IAT Mean <= 17895945.6) and (Flow Duration >= 89479687) and (Flow IAT Std <= 15345170.106553) and (Idle Std >= 15281086.85538) and (Flow Duration <= 89479700) => Label=Brute Force -Web (6.0/0.0)
+(Bwd Pkts/s <= 0.599903) and (Bwd Pkts/s >= 0.598997) and (Fwd Pkt Len Mean >= 129.2) => Label=Brute Force -Web (30.0/0.0)
+(Tot Bwd Pkts <= 0) and (TotLen Fwd Pkts >= 3000) and (Flow Duration >= 89479715) and (Flow Duration <= 89479728) and (Flow IAT Max <= 41990318) and (Flow IAT Min <= 4000276) => Label=Brute Force -Web (3.0/0.0)
+ => Label=Benign (1048151.0/158.0)
+
+Number of Rules : 25
+
+
+Time taken to build model: 1506.37 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.29 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      356442               99.9795 %
+Incorrectly Classified Instances        73                0.0205 %
+Kappa statistic                          0.8026
+Mean absolute error                      0.0001
+Root mean squared error                  0.0097
+Relative absolute error                 24.157  %
+Root relative squared error             57.8605 %
+Total Number of Instances           356515     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,250    1,000      1,000    1,000      0,813    0,875     1,000     Benign
+                 0,651    0,000    0,804      0,651    0,719      0,723    0,825     0,573     Brute Force -Web
+                 0,945    0,000    0,963      0,945    0,954      0,954    0,964     0,927     Brute Force -XSS
+                 0,684    0,000    0,929      0,684    0,788      0,797    0,895     0,654     SQL Injection
+Weighted Avg.    1,000    0,250    1,000      1,000    1,000      0,813    0,875     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c      d   <-- classified as
+ 356295     20      0      0 |      a = Benign
+     44     82      0      0 |      b = Brute Force -Web
+      2      0     52      1 |      c = Brute Force -XSS
+      4      0      2     13 |      d = SQL Injection
+

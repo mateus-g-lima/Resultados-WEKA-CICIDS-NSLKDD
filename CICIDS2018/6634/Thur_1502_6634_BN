@@ -1,0 +1,191 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Thursday-15-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=69 #classindex=68
+Network structure (nodes followed by parents)
+Dst Port(3): Label 
+Protocol(3): Label 
+Flow Duration(445): Label 
+Tot Fwd Pkts(16): Label 
+Tot Bwd Pkts(7): Label 
+TotLen Fwd Pkts(180): Label 
+TotLen Bwd Pkts(8): Label 
+Fwd Pkt Len Max(85): Label 
+Fwd Pkt Len Min(6): Label 
+Fwd Pkt Len Mean(870): Label 
+Fwd Pkt Len Std(1153): Label 
+Bwd Pkt Len Max(8): Label 
+Bwd Pkt Len Min(2): Label 
+Bwd Pkt Len Mean(16): Label 
+Bwd Pkt Len Std(16): Label 
+Flow Byts/s(136): Label 
+Flow Pkts/s(364): Label 
+Flow IAT Mean(357): Label 
+Flow IAT Std(214): Label 
+Flow IAT Max(412): Label 
+Flow IAT Min(122): Label 
+Fwd IAT Tot(441): Label 
+Fwd IAT Mean(365): Label 
+Fwd IAT Std(187): Label 
+Fwd IAT Max(408): Label 
+Fwd IAT Min(230): Label 
+Bwd IAT Tot(195): Label 
+Bwd IAT Mean(167): Label 
+Bwd IAT Std(152): Label 
+Bwd IAT Max(141): Label 
+Bwd IAT Min(57): Label 
+Fwd PSH Flags(2): Label 
+Fwd Header Len(64): Label 
+Bwd Header Len(20): Label 
+Fwd Pkts/s(430): Label 
+Bwd Pkts/s(211): Label 
+Pkt Len Min(2): Label 
+Pkt Len Max(41): Label 
+Pkt Len Mean(966): Label 
+Pkt Len Std(629): Label 
+Pkt Len Var(629): Label 
+FIN Flag Cnt(2): Label 
+SYN Flag Cnt(2): Label 
+RST Flag Cnt(2): Label 
+PSH Flag Cnt(2): Label 
+ACK Flag Cnt(2): Label 
+URG Flag Cnt(2): Label 
+ECE Flag Cnt(2): Label 
+Down/Up Ratio(4): Label 
+Pkt Size Avg(959): Label 
+Fwd Seg Size Avg(870): Label 
+Bwd Seg Size Avg(16): Label 
+Subflow Fwd Pkts(16): Label 
+Subflow Fwd Byts(180): Label 
+Subflow Bwd Pkts(7): Label 
+Subflow Bwd Byts(8): Label 
+Init Fwd Win Byts(11): Label 
+Init Bwd Win Byts(10): Label 
+Fwd Act Data Pkts(9): Label 
+Fwd Seg Size Min(4): Label 
+Active Mean(69): Label 
+Active Std(63): Label 
+Active Max(63): Label 
+Active Min(94): Label 
+Idle Mean(258): Label 
+Idle Std(37): Label 
+Idle Max(263): Label 
+Idle Min(246): Label 
+Label(3): 
+LogScore Bayes: -1.1501806027002954E8
+LogScore BDeu: -1.1535927218136568E8
+LogScore MDL: -1.1534939090911768E8
+LogScore ENTROPY: -1.1508127466664988E8
+LogScore AIC: -1.1511995566664988E8
+
+
+Time taken to build model: 152.43 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 2.63 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      356360               99.9565 %
+Incorrectly Classified Instances       155                0.0435 %
+Kappa statistic                          0.9955
+Mean absolute error                      0.0003
+Root mean squared error                  0.0167
+Relative absolute error                  0.4503 %
+Root relative squared error              9.2977 %
+Total Number of Instances           356515     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,004    1,000      1,000    1,000      0,996    1,000     1,000     Benign
+                 0,997    0,000    0,998      0,997    0,998      0,997    1,000     0,999     DoS attacks-GoldenEye
+                 0,986    0,000    0,985      0,986    0,986      0,986    1,000     0,991     DoS attacks-Slowloris
+Weighted Avg.    1,000    0,004    1,000      1,000    1,000      0,996    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c   <-- classified as
+ 338502     17     38 |      a = Benign
+     31  14167     18 |      b = DoS attacks-GoldenEye
+     46      5   3691 |      c = DoS attacks-Slowloris
+

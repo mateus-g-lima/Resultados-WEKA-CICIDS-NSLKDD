@@ -1,0 +1,126 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     KDDTrain
+Instances:    125973
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(src_bytes <= 28) and (same_srv_rate <= 0.49) and (srv_count >= 3) => class=anomaly (36206.0/3.0)
+(dst_bytes <= 3) and (count >= 56) and (logged_in = 0) and (dst_host_count >= 243) and (src_bytes <= 28) => class=anomaly (6640.0/0.0)
+(dst_bytes <= 3) and (dst_host_same_src_port_rate >= 0.63) and (src_bytes >= 1) and (src_bytes <= 8) => class=anomaly (4866.0/1.0)
+(dst_bytes <= 3) and (service = private) and (src_bytes <= 28) => class=anomaly (3186.0/3.0)
+(dst_bytes <= 3) and (service = ecr_i) and (src_bytes >= 520) => class=anomaly (2844.0/0.0)
+(dst_bytes <= 28) and (srv_serror_rate >= 0.58) and (count >= 2) and (dst_host_same_src_port_rate <= 0.06) => class=anomaly (1065.0/1.0)
+(hot >= 1) and (src_bytes >= 13748) and (dst_host_same_srv_rate >= 1) => class=anomaly (990.0/0.0)
+(dst_bytes <= 32) and (dst_host_same_src_port_rate >= 0.82) and (dst_host_srv_diff_host_rate >= 0.07) and (src_bytes >= 18) and (dst_host_count <= 9) and (src_bytes <= 18) => class=anomaly (524.0/0.0)
+(src_bytes <= 6) and (dst_host_srv_count <= 2) and (dst_host_rerror_rate >= 0.08) and (dst_host_count >= 18) and (dst_host_diff_srv_rate >= 0.04) => class=anomaly (555.0/0.0)
+(dst_host_srv_count <= 89) and (dst_host_same_src_port_rate >= 1) and (service = ftp_data) and (dst_host_srv_diff_host_rate >= 0.1) and (num_root <= 0) => class=anomaly (410.0/0.0)
+(dst_host_srv_count <= 144) and (duration <= 6) and (hot >= 28) => class=anomaly (273.0/0.0)
+(dst_bytes <= 32) and (service = private) and (dst_host_same_src_port_rate >= 0.14) and (dst_host_count >= 4) and (dst_host_srv_count <= 208) => class=anomaly (244.0/4.0)
+(dst_host_srv_count <= 49) and (src_bytes <= 6) and (dst_host_diff_srv_rate >= 0.85) => class=anomaly (91.0/2.0)
+(dst_host_srv_count <= 69) and (src_bytes <= 6) and (dst_host_serror_rate >= 0.16) and (srv_serror_rate >= 0.5) => class=anomaly (149.0/10.0)
+(dst_host_srv_count <= 87) and (dst_host_same_srv_rate >= 1) and (hot >= 1) and (service = telnet) => class=anomaly (77.0/2.0)
+(dst_host_srv_count <= 87) and (src_bytes <= 20) and (protocol_type = icmp) => class=anomaly (62.0/1.0)
+(dst_host_srv_count <= 86) and (src_bytes <= 6) and (dst_host_srv_rerror_rate <= 0.05) and (dst_host_same_src_port_rate >= 0.17) and (dst_host_rerror_rate >= 0.25) => class=anomaly (34.0/0.0)
+(dst_host_srv_count <= 19) and (src_bytes <= 6) and (same_srv_rate <= 0.75) and (dst_host_diff_srv_rate >= 0.06) => class=anomaly (44.0/6.0)
+(dst_host_srv_count <= 85) and (dst_host_count <= 15) and (dst_host_same_src_port_rate >= 1) and (dst_host_srv_diff_host_rate <= 0.02) and (src_bytes <= 4) and (service = ftp_data) => class=anomaly (27.0/0.0)
+(dst_host_srv_count <= 155) and (hot >= 1) and (duration >= 61) and (dst_host_diff_srv_rate <= 0.02) and (dst_bytes <= 9139) => class=anomaly (37.0/2.0)
+(dst_bytes <= 35) and (duration >= 5033) => class=anomaly (22.0/1.0)
+(dst_host_srv_count <= 136) and (src_bytes <= 10) and (flag = RSTR) => class=anomaly (20.0/2.0)
+(dst_host_srv_count <= 128) and (dst_host_count <= 16) and (duration >= 4) and (service = ftp_data) => class=anomaly (14.0/2.0)
+(dst_host_srv_count <= 85) and (dst_host_same_src_port_rate >= 1) and (service = ftp_data) and (src_bytes <= 334) and (src_bytes >= 334) => class=anomaly (60.0/1.0)
+(dst_host_srv_count <= 5) and (dst_host_rerror_rate >= 0.02) and (same_srv_rate <= 0.25) => class=anomaly (16.0/4.0)
+(dst_host_srv_count <= 136) and (src_bytes <= 10) and (dst_host_serror_rate >= 0.91) and (dst_host_srv_serror_rate >= 0.15) and (flag = S0) => class=anomaly (7.0/0.0)
+(dst_host_srv_count <= 109) and (dst_host_count <= 11) and (num_file_creations >= 1) and (src_bytes <= 415) => class=anomaly (6.0/0.0)
+(dst_host_srv_count <= 155) and (src_bytes <= 334) and (src_bytes >= 334) and (dst_bytes <= 0) => class=anomaly (42.0/0.0)
+(dst_host_srv_count <= 11) and (dst_host_diff_srv_rate <= 0.06) and (protocol_type = udp) and (dst_bytes <= 4) and (srv_diff_host_rate <= 0) and (src_bytes <= 100) => class=anomaly (21.0/4.0)
+(dst_host_same_srv_rate <= 0.35) and (dst_host_rerror_rate >= 0.07) and (dst_host_srv_count >= 106) and (dst_bytes <= 375) => class=anomaly (17.0/1.0)
+(dst_host_srv_count <= 10) and (dst_host_same_src_port_rate <= 0.01) and (srv_count >= 3) and (service = finger) => class=anomaly (14.0/1.0)
+(dst_host_srv_count <= 110) and (dst_host_count <= 6) and (dst_host_srv_diff_host_rate <= 0.1) and (dst_host_rerror_rate >= 0.83) and (dst_host_srv_rerror_rate <= 0.02) => class=anomaly (6.0/0.0)
+(dst_host_srv_count <= 84) and (dst_host_srv_serror_rate >= 0.01) and (dst_host_same_src_port_rate >= 0.32) and (dst_host_count >= 255) and (duration >= 4) => class=anomaly (6.0/0.0)
+(dst_host_srv_count <= 48) and (dst_host_same_src_port_rate >= 1) and (service = ftp_data) and (src_bytes <= 246) and (src_bytes >= 246) => class=anomaly (5.0/0.0)
+(srv_count <= 1) and (src_bytes <= 104) and (hot >= 1) and (service = http) => class=anomaly (8.0/2.0)
+(dst_host_srv_count <= 3) and (dst_host_count <= 15) and (dst_bytes <= 35) and (service = auth) => class=anomaly (4.0/0.0)
+ => class=normal (67381.0/91.0)
+
+Number of Rules : 37
+
+
+Time taken to build model: 107.58 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.12 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       17454               77.4219 %
+Incorrectly Classified Instances      5090               22.5781 %
+Kappa statistic                          0.5644
+Mean absolute error                      0.2272
+Root mean squared error                  0.4746
+Relative absolute error                 45.0092 %
+Root relative squared error             93.7941 %
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,972    0,375    0,662      0,972    0,788      0,613    0,800     0,658     normal
+                 0,625    0,028    0,967      0,625    0,759      0,613    0,800     0,822     anomaly
+Weighted Avg.    0,774    0,178    0,836      0,774    0,771      0,613    0,800     0,751     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9438  273 |    a = normal
+ 4817 8016 |    b = anomaly
+

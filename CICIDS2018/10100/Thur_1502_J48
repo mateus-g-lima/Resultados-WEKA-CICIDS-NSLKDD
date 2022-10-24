@@ -1,0 +1,156 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     Thursday-15-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1
+Instances:    104858
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Bwd IAT Max <= 74323877
+|   Fwd Seg Size Min <= 28
+|   |   FIN Flag Cnt <= 0: Benign (97448.0)
+|   |   FIN Flag Cnt > 0
+|   |   |   Fwd IAT Min <= 1: Benign (425.0)
+|   |   |   Fwd IAT Min > 1
+|   |   |   |   Dst Port <= 24782: DoS attacks-Slowloris (11.0/1.0)
+|   |   |   |   Dst Port > 24782: Benign (184.0)
+|   Fwd Seg Size Min > 28
+|   |   Dst Port <= 80
+|   |   |   Fwd Seg Size Min <= 36
+|   |   |   |   Init Fwd Win Byts <= 216: DoS attacks-Slowloris (121.0)
+|   |   |   |   Init Fwd Win Byts > 216
+|   |   |   |   |   Init Bwd Win Byts <= 226
+|   |   |   |   |   |   Fwd IAT Std <= 4088728.165362: DoS attacks-GoldenEye (4136.0/4.0)
+|   |   |   |   |   |   Fwd IAT Std > 4088728.165362
+|   |   |   |   |   |   |   Tot Bwd Pkts <= 3: DoS attacks-Slowloris (11.0)
+|   |   |   |   |   |   |   Tot Bwd Pkts > 3: DoS attacks-GoldenEye (14.0)
+|   |   |   |   |   Init Bwd Win Byts > 226
+|   |   |   |   |   |   Init Fwd Win Byts <= 27630: DoS attacks-Slowloris (22.0)
+|   |   |   |   |   |   Init Fwd Win Byts > 27630: Benign (7.0)
+|   |   |   Fwd Seg Size Min > 36
+|   |   |   |   Dst Port <= 23: Benign (32.0)
+|   |   |   |   Dst Port > 23
+|   |   |   |   |   Flow IAT Min <= 1003668
+|   |   |   |   |   |   Flow IAT Min <= 1000628: Benign (4.0)
+|   |   |   |   |   |   Flow IAT Min > 1000628: DoS attacks-Slowloris (4.0)
+|   |   |   |   |   Flow IAT Min > 1003668: DoS attacks-Slowloris (223.0)
+|   |   Dst Port > 80: Benign (1476.0)
+Bwd IAT Max > 74323877
+|   Fwd Seg Size Min <= 24: Benign (31.0)
+|   Fwd Seg Size Min > 24
+|   |   Fwd Pkt Len Max <= 234: DoS attacks-Slowloris (681.0)
+|   |   Fwd Pkt Len Max > 234
+|   |   |   TotLen Fwd Pkts <= 2801: DoS attacks-Slowloris (23.0)
+|   |   |   TotLen Fwd Pkts > 2801: DoS attacks-GoldenEye (5.0)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	37
+
+
+Time taken to build model: 12.22 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 9.93 seconds
+
+=== Summary ===
+
+Correctly Classified Instances     1048451               99.9882 %
+Incorrectly Classified Instances       124                0.0118 %
+Kappa statistic                          0.9988
+Mean absolute error                      0.0001
+Root mean squared error                  0.0088
+Relative absolute error                  0.1726 %
+Root relative squared error              4.93   %
+Total Number of Instances          1048575     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      0,999    1,000     1,000     Benign
+                 1,000    0,000    0,998      1,000    0,999      0,999    1,000     0,998     DoS attacks-GoldenEye
+                 0,997    0,000    0,996      0,997    0,996      0,996    1,000     0,994     DoS attacks-Slowloris
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      0,999    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c   <-- classified as
+ 995992     40     45 |      a = Benign
+      0  41504      4 |      b = DoS attacks-GoldenEye
+      3     32  10955 |      c = DoS attacks-Slowloris
+

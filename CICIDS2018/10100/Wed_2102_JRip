@@ -1,0 +1,124 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     Wednesday-21-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1
+Instances:    104858
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(Tot Fwd Pkts >= 859) => Label=DDOS attack-LOIC-UDP (173.0/0.0)
+(Tot Fwd Pkts >= 4) => Label=Benign (36054.0/0.0)
+(Init Fwd Win Byts <= 14600) => Label=Benign (26.0/0.0)
+(Dst Port >= 443) => Label=Benign (2.0/0.0)
+(Dst Port <= 23) => Label=Benign (2.0/0.0)
+ => Label=DDOS attack-HOIC (68601.0/0.0)
+
+Number of Rules : 6
+
+
+Time taken to build model: 12.7 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 10.62 seconds
+
+=== Summary ===
+
+Correctly Classified Instances     1048569               99.9994 %
+Incorrectly Classified Instances         6                0.0006 %
+Kappa statistic                          1     
+Mean absolute error                      0     
+Root mean squared error                  0.002 
+Relative absolute error                  0.0013 %
+Root relative squared error              0.5023 %
+Total Number of Instances          1048575     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Benign
+                 0,999    0,000    1,000      0,999    0,999      0,999    0,999     0,999     DDOS attack-LOIC-UDP
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     DDOS attack-HOIC
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c   <-- classified as
+ 360829      0      4 |      a = Benign
+      2   1728      0 |      b = DDOS attack-LOIC-UDP
+      0      0 686012 |      c = DDOS attack-HOIC
+

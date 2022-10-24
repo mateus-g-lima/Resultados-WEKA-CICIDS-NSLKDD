@@ -1,0 +1,786 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     Friday-02-03-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R3
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+Bwd IAT Tot < 70657.5
+|   Init Fwd Win Byts < 2051
+|   |   Bwd Pkt Len Mean < 0.5
+|   |   |   Dst Port < 8072.5
+|   |   |   |   Fwd Pkts/s < 1555.81
+|   |   |   |   |   Active Mean < 1164.97
+|   |   |   |   |   |   Flow IAT Max < 11222.5
+|   |   |   |   |   |   |   Flow Pkts/s < 419.49 : Benign (1183/0)
+|   |   |   |   |   |   |   Flow Pkts/s >= 419.49
+|   |   |   |   |   |   |   |   Tot Fwd Pkts < 6.5 : Benign (2110/0)
+|   |   |   |   |   |   |   |   Tot Fwd Pkts >= 6.5 : Bot (33/0)
+|   |   |   |   |   |   Flow IAT Max >= 11222.5
+|   |   |   |   |   |   |   Flow IAT Max < 27808
+|   |   |   |   |   |   |   |   Fwd Header Len < 8
+|   |   |   |   |   |   |   |   |   Fwd IAT Mean < 3271.89 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 3271.89 : Benign (140/0)
+|   |   |   |   |   |   |   |   Fwd Header Len >= 8 : Benign (1402/0)
+|   |   |   |   |   |   |   Flow IAT Max >= 27808 : Benign (36072/0)
+|   |   |   |   |   Active Mean >= 1164.97
+|   |   |   |   |   |   Flow IAT Std < 5261165.19
+|   |   |   |   |   |   |   Idle Mean < 29700000 : Benign (2140/0)
+|   |   |   |   |   |   |   Idle Mean >= 29700000
+|   |   |   |   |   |   |   |   Flow Pkts/s < 0.84 : Benign (32/0)
+|   |   |   |   |   |   |   |   Flow Pkts/s >= 0.84
+|   |   |   |   |   |   |   |   |   Flow Duration < 104148944 : Bot (4/0)
+|   |   |   |   |   |   |   |   |   Flow Duration >= 104148944 : Benign (1/0)
+|   |   |   |   |   |   Flow IAT Std >= 5261165.19
+|   |   |   |   |   |   |   Tot Fwd Pkts < 26.5
+|   |   |   |   |   |   |   |   Fwd Pkts/s < 0.41
+|   |   |   |   |   |   |   |   |   Fwd IAT Max < 30250000 : Benign (429/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Max >= 30250000
+|   |   |   |   |   |   |   |   |   |   Flow IAT Min < 820
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Std < 14550000
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 59750000
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 31116927 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 31116927 : Benign (9/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 59750000
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 0.12 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 0.12 : Bot (9/0)
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Std >= 14550000
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 78600000 : Benign (74/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 78600000 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 820 : Benign (475/0)
+|   |   |   |   |   |   |   |   Fwd Pkts/s >= 0.41 : Bot (10/0)
+|   |   |   |   |   |   |   Tot Fwd Pkts >= 26.5
+|   |   |   |   |   |   |   |   Fwd IAT Min < 9431.5
+|   |   |   |   |   |   |   |   |   Flow IAT Max < 29200000 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   Flow IAT Max >= 29200000 : Bot (196/0)
+|   |   |   |   |   |   |   |   Fwd IAT Min >= 9431.5 : Benign (14/0)
+|   |   |   |   Fwd Pkts/s >= 1555.81
+|   |   |   |   |   Fwd Header Len < 10
+|   |   |   |   |   |   Flow IAT Min < 487 : Benign (435/0)
+|   |   |   |   |   |   Flow IAT Min >= 487
+|   |   |   |   |   |   |   Flow Duration < 1104 : Benign (6/0)
+|   |   |   |   |   |   |   Flow Duration >= 1104
+|   |   |   |   |   |   |   |   Flow Duration < 1327.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   Flow Duration >= 1327.5 : Benign (3/0)
+|   |   |   |   |   Fwd Header Len >= 10 : Benign (49229/0)
+|   |   |   Dst Port >= 8072.5
+|   |   |   |   Down/Up Ratio < 0.5
+|   |   |   |   |   Fwd IAT Mean < 357.75
+|   |   |   |   |   |   Pkt Len Std < 63.22 : Benign (44110/0)
+|   |   |   |   |   |   Pkt Len Std >= 63.22
+|   |   |   |   |   |   |   Fwd IAT Min < 204 : Benign (80/0)
+|   |   |   |   |   |   |   Fwd IAT Min >= 204
+|   |   |   |   |   |   |   |   Fwd Pkt Len Std < 81.46 : Bot (1/0)
+|   |   |   |   |   |   |   |   Fwd Pkt Len Std >= 81.46 : Benign (1/0)
+|   |   |   |   |   Fwd IAT Mean >= 357.75
+|   |   |   |   |   |   Flow IAT Max < 792.5
+|   |   |   |   |   |   |   Flow IAT Std < 82.38
+|   |   |   |   |   |   |   |   Dst Port < 10662.5 : Bot (14822/0)
+|   |   |   |   |   |   |   |   Dst Port >= 10662.5 : Benign (230/0)
+|   |   |   |   |   |   |   Flow IAT Std >= 82.38 : Benign (777/0)
+|   |   |   |   |   |   Flow IAT Max >= 792.5
+|   |   |   |   |   |   |   Fwd IAT Tot < 936
+|   |   |   |   |   |   |   |   Pkt Len Max < 15.5
+|   |   |   |   |   |   |   |   |   Flow IAT Mean < 625.75 : Benign (6/0)
+|   |   |   |   |   |   |   |   |   Flow IAT Mean >= 625.75
+|   |   |   |   |   |   |   |   |   |   Flow IAT Max < 865.5
+|   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 2321.53 : Bot (5/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 2321.53
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 860.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2506.27
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 799.5 : Bot (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 799.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 839.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 826
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 247.5 : Benign (10/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 247.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 816.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 2453.99 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 2453.99
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 812.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 811.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 806.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 805
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 800.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 384.5 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 384.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 800.5 : Bot (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 805 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 806.5 : Bot (10/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 811.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29169.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29169.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 812.5 : Bot (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 816.5 : Bot (17/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 826
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 828 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 828
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 830.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 830.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 833.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 831.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29775 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29775 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 831.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 833.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 838 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 838
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29037.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29037.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 839.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 845 : Bot (7/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 845
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Header Len < 46
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FIN Flag Cnt < 0.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 191.5 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 191.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2335.09
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 859
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 271 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 271 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 859 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2335.09
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 847.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 2362.67
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 384.5 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 384.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 2362.67 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 847.5 : Bot (12/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FIN Flag Cnt >= 0.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Header Len >= 46 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2506.27
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 794.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 794.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 189.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 189.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29244.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29244.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 860.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 865.5
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 878.5
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 875
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 873.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 872.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 871.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 869.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 868.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2305.48 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2305.48
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 26105.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 26105.5 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 868.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 869.5 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 871.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 872.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 873.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 875 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 878.5
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 892
+|   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 33943.5 : Bot (12/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 33943.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 892
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 905.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 28992 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 28992 : Benign (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 905.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29289.5 : Bot (13/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29289.5 : Benign (11/0)
+|   |   |   |   |   |   |   |   Pkt Len Max >= 15.5 : Benign (227/0)
+|   |   |   |   |   |   |   Fwd IAT Tot >= 936
+|   |   |   |   |   |   |   |   Init Fwd Win Byts < 255.5 : Benign (8896/0)
+|   |   |   |   |   |   |   |   Init Fwd Win Byts >= 255.5
+|   |   |   |   |   |   |   |   |   Pkt Len Mean < 2.58
+|   |   |   |   |   |   |   |   |   |   Flow Duration < 25659
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 13900
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 8758.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 9941 : Bot (31/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 9941 : Benign (86/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 8758.5 : Benign (50/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 13900
+|   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 78.67 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 78.67
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 24452.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 14620.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 14620.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 266.5 : Bot (7/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 266.5 : Benign (11/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 24452.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   Flow Duration >= 25659
+|   |   |   |   |   |   |   |   |   |   |   Bwd Pkts/s < 0.77
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 223314
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 222348.5 : Benign (98/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 222348.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 223314 : Benign (599/0)
+|   |   |   |   |   |   |   |   |   |   |   Bwd Pkts/s >= 0.77 : Benign (92/0)
+|   |   |   |   |   |   |   |   |   Pkt Len Mean >= 2.58 : Benign (1854/0)
+|   |   |   |   Down/Up Ratio >= 0.5
+|   |   |   |   |   Fwd Pkt Len Mean < 95 : Benign (21893/0)
+|   |   |   |   |   Fwd Pkt Len Mean >= 95
+|   |   |   |   |   |   Fwd PSH Flags < 0.5 : Benign (14/0)
+|   |   |   |   |   |   Fwd PSH Flags >= 0.5 : Bot (2/0)
+|   |   Bwd Pkt Len Mean >= 0.5 : Benign (191692/0)
+|   Init Fwd Win Byts >= 2051
+|   |   Fwd IAT Min < 919.5
+|   |   |   Pkt Len Max < 408.5
+|   |   |   |   Fwd IAT Min < 37.5
+|   |   |   |   |   TotLen Fwd Pkts < 126 : Benign (13943/0)
+|   |   |   |   |   TotLen Fwd Pkts >= 126
+|   |   |   |   |   |   Bwd Pkt Len Max < 225
+|   |   |   |   |   |   |   Fwd IAT Mean < 7673.14
+|   |   |   |   |   |   |   |   Flow Byts/s < 68226.7
+|   |   |   |   |   |   |   |   |   Init Bwd Win Byts < 109.5 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   Init Bwd Win Byts >= 109.5 : Bot (167/0)
+|   |   |   |   |   |   |   |   Flow Byts/s >= 68226.7 : Benign (23/0)
+|   |   |   |   |   |   |   Fwd IAT Mean >= 7673.14 : Benign (146/0)
+|   |   |   |   |   |   Bwd Pkt Len Max >= 225 : Bot (3300/0)
+|   |   |   |   Fwd IAT Min >= 37.5
+|   |   |   |   |   Fwd Pkt Len Mean < 89.58
+|   |   |   |   |   |   Fwd Header Len < 54
+|   |   |   |   |   |   |   Flow IAT Max < 378.5 : Benign (4069/0)
+|   |   |   |   |   |   |   Flow IAT Max >= 378.5
+|   |   |   |   |   |   |   |   Pkt Len Mean < 17.5
+|   |   |   |   |   |   |   |   |   Flow Duration < 100523.5
+|   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 733.5
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 431.5
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 407.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Tot Bwd Pkts < 14
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 403.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 5414.5 : Bot (16/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 5414.5 : Benign (11/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 403.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Bwd Header Len < 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 405.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 404.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 404.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 30398 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 30398 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 405.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 406.5 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 406.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8106 : Bot (10/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8106 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Bwd Header Len >= 10 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Tot Bwd Pkts >= 14 : Bot (60/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 407.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Byts/s < 2046.45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 414.5 : Bot (88/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 414.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29492.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 428.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33131 : Bot (420/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33131 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 428.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 32857 : Bot (170/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 32857 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29492.5 : Benign (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Byts/s >= 2046.45 : Bot (13/0)
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 431.5
+|   |   |   |   |   |   |   |   |   |   |   |   Bwd Header Len < 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 546.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 441.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 436.5 : Bot (435/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 436.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 437.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 32652 : Bot (130/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 32652 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 437.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 438.5 : Bot (150/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 438.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 439.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8276.5 : Bot (185/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8276.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 439.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 440.5 : Bot (201/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 440.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 4080 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 4080 : Bot (223/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 441.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 4261.5 : Benign (12/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 4261.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 517.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 516.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 461.5 : Bot (9912/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 461.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 463.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29008.5 : Bot (1332/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29008.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 463.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 28907 : Bot (63737/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 28907 : Benign (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 516.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29249 : Bot (833/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29249 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 517.5 : Bot (16191/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 546.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 4261.5 : Benign (23/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 4261.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 556.5 : Bot (3187/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 556.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 3530.45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2939.02
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 704.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 702.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2926.12
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 30225.5 : Bot (2104/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 30225.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2926.12
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 2930.4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33146 : Bot (119/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33146 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 2930.4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 30581.5 : Bot (279/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 30581.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 702.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29379.5 : Bot (165/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29379.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 704.5 : Bot (1583/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2939.02
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 28825.5 : Bot (21551/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 28825.5 : Benign (11/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 3530.45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 3549.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 3542.96
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 3536.7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29250 : Bot (261/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29250 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 3536.7 : Bot (241/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 3542.96
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8094 : Bot (231/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8094 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 3549.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 19224 : Bot (1842/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 19224 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Bwd Header Len >= 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 6211.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 6211.5 : Bot (25/0)
+|   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 733.5
+|   |   |   |   |   |   |   |   |   |   |   Pkt Len Max < 74.5
+|   |   |   |   |   |   |   |   |   |   |   |   Bwd Header Len < 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 886.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 734.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33146 : Bot (37/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33146 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 734.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2351.56
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8026.5 : Bot (173/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8026.5 : Benign (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2351.56
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 809.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 808.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 736.5 : Bot (73/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 736.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 794.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 788.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 787.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 781.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 780.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 772.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 771.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 756.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 747.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 740.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 738.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 737.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8262 : Bot (26/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8262 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 737.5 : Bot (43/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 738.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 739.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29660.5 : Bot (39/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29660.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 739.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 32476.5 : Bot (29/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 32476.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 740.5 : Bot (193/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 747.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 751.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 750.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 749.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2672.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 28977 : Bot (40/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 28977 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2672.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33146 : Bot (31/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33146 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 749.5 : Bot (22/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 750.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 4080 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 4080
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 11156 : Bot (23/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 11156 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 751.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8093.5 : Bot (115/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8093.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 756.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 763.5 : Bot (150/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 763.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 764.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33146 : Bot (15/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33146 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 764.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 767.5 : Bot (70/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 767.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 4261.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 4261.5 : Bot (90/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 771.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 30395.5 : Bot (13/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 30395.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 772.5 : Bot (145/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 780.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 4261.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 4261.5 : Bot (9/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 781.5 : Bot (101/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 787.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33146 : Bot (11/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33146 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 788.5 : Bot (77/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 794.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 2507.84
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 6140 : Bot (121/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 6140 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 2507.84
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29275.5 : Bot (46/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29275.5 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 808.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33130.5 : Bot (11/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33130.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 809.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 833.5 : Bot (280/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 833.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 836.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 7931 : Bot (32/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 7931 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 836.5 : Bot (103/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 886.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 6139.5 : Bot (87/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 6139.5 : Benign (7/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Bwd Header Len >= 10 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   Pkt Len Max >= 74.5 : Bot (621/0)
+|   |   |   |   |   |   |   |   |   Flow Duration >= 100523.5 : Benign (28/0)
+|   |   |   |   |   |   |   |   Pkt Len Mean >= 17.5 : Benign (5/0)
+|   |   |   |   |   |   Fwd Header Len >= 54
+|   |   |   |   |   |   |   Pkt Len Max < 283.5
+|   |   |   |   |   |   |   |   Flow Byts/s < 2151.41 : Benign (6240/0)
+|   |   |   |   |   |   |   |   Flow Byts/s >= 2151.41
+|   |   |   |   |   |   |   |   |   Flow Byts/s < 9200.38
+|   |   |   |   |   |   |   |   |   |   Fwd Pkt Len Mean < 14.21
+|   |   |   |   |   |   |   |   |   |   |   Flow Duration < 13286.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 13286.5 : Bot (16/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Pkt Len Mean >= 14.21 : Benign (34/0)
+|   |   |   |   |   |   |   |   |   Flow Byts/s >= 9200.38 : Benign (5109/0)
+|   |   |   |   |   |   |   Pkt Len Max >= 283.5
+|   |   |   |   |   |   |   |   Dst Port < 25357 : Benign (35/0)
+|   |   |   |   |   |   |   |   Dst Port >= 25357 : Bot (874/0)
+|   |   |   |   |   Fwd Pkt Len Mean >= 89.58
+|   |   |   |   |   |   Fwd Pkt Len Mean < 110.63
+|   |   |   |   |   |   |   Flow Pkts/s < 39162.34 : Bot (136652/0)
+|   |   |   |   |   |   |   Flow Pkts/s >= 39162.34 : Benign (1/0)
+|   |   |   |   |   |   Fwd Pkt Len Mean >= 110.63
+|   |   |   |   |   |   |   Flow Duration < 34075
+|   |   |   |   |   |   |   |   TotLen Fwd Pkts < 377
+|   |   |   |   |   |   |   |   |   Bwd Pkt Len Mean < 103.13 : Bot (793/0)
+|   |   |   |   |   |   |   |   |   Bwd Pkt Len Mean >= 103.13 : Benign (1/0)
+|   |   |   |   |   |   |   |   TotLen Fwd Pkts >= 377
+|   |   |   |   |   |   |   |   |   Fwd Pkt Len Mean < 130.83 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   Fwd Pkt Len Mean >= 130.83 : Bot (4/0)
+|   |   |   |   |   |   |   Flow Duration >= 34075
+|   |   |   |   |   |   |   |   Fwd Pkt Len Mean < 121.5 : Benign (16/0)
+|   |   |   |   |   |   |   |   Fwd Pkt Len Mean >= 121.5
+|   |   |   |   |   |   |   |   |   Fwd IAT Std < 14143.55 : Bot (19/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Std >= 14143.55
+|   |   |   |   |   |   |   |   |   |   Pkt Len Mean < 45.75 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   Pkt Len Mean >= 45.75 : Benign (3/0)
+|   |   |   Pkt Len Max >= 408.5
+|   |   |   |   Dst Port < 4262.5 : Benign (27297/0)
+|   |   |   |   Dst Port >= 4262.5
+|   |   |   |   |   Bwd IAT Max < 1580 : Benign (168/0)
+|   |   |   |   |   Bwd IAT Max >= 1580
+|   |   |   |   |   |   Bwd IAT Mean < 5230.83 : Bot (75/0)
+|   |   |   |   |   |   Bwd IAT Mean >= 5230.83
+|   |   |   |   |   |   |   TotLen Fwd Pkts < 308.5 : Bot (2/0)
+|   |   |   |   |   |   |   TotLen Fwd Pkts >= 308.5 : Benign (2/0)
+|   |   Fwd IAT Min >= 919.5
+|   |   |   Flow IAT Mean < 9828.67
+|   |   |   |   Flow Pkts/s < 1833.18
+|   |   |   |   |   Subflow Fwd Byts < 330
+|   |   |   |   |   |   Fwd IAT Min < 1477.5
+|   |   |   |   |   |   |   Bwd Pkt Len Max < 56
+|   |   |   |   |   |   |   |   Fwd Pkts/s < 1643.39
+|   |   |   |   |   |   |   |   |   Fwd IAT Tot < 1310
+|   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 1538.46 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 1538.46
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 1265.5
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot < 1221 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 1221
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 1600
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 1594.9
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 1589.21 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 1589.21 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 1594.9 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 1600
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 1245.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 1231 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 1231
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 29578 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 29578 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 1245.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 1265.5
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 1288.5 : Benign (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 1288.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 1291.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 1291.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 1541.43
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 1298.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 1298.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 1541.43 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Tot >= 1310
+|   |   |   |   |   |   |   |   |   |   Fwd Header Len < 56
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 1375 : Benign (8/0)
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 1375
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 1382.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 1382.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8127 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8127 : Benign (9/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Header Len >= 56 : Benign (6/0)
+|   |   |   |   |   |   |   |   Fwd Pkts/s >= 1643.39
+|   |   |   |   |   |   |   |   |   Fwd IAT Mean < 1168.5
+|   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 7968 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 7968 : Benign (6/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 1168.5 : Benign (12/0)
+|   |   |   |   |   |   |   Bwd Pkt Len Max >= 56
+|   |   |   |   |   |   |   |   Flow Byts/s < 14177.35 : Bot (15/0)
+|   |   |   |   |   |   |   |   Flow Byts/s >= 14177.35
+|   |   |   |   |   |   |   |   |   TotLen Bwd Pkts < 310.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   TotLen Bwd Pkts >= 310.5 : Benign (4/0)
+|   |   |   |   |   |   Fwd IAT Min >= 1477.5
+|   |   |   |   |   |   |   Fwd Pkts/s < 294.42
+|   |   |   |   |   |   |   |   Fwd IAT Max < 7131.5
+|   |   |   |   |   |   |   |   |   Flow IAT Min < 7051
+|   |   |   |   |   |   |   |   |   |   Tot Bwd Pkts < 5
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 6936.5
+|   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 293.66 : Benign (7/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 293.66
+|   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port < 30401.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Dst Port >= 30401.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 6936.5
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 7027.5 : Bot (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 7027.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   Tot Bwd Pkts >= 5 : Bot (5/0)
+|   |   |   |   |   |   |   |   |   Flow IAT Min >= 7051 : Bot (7/0)
+|   |   |   |   |   |   |   |   Fwd IAT Max >= 7131.5
+|   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 5122 : Bot (10/0)
+|   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 5122
+|   |   |   |   |   |   |   |   |   |   Fwd Pkt Len Std < 185.33 : Benign (88/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Pkt Len Std >= 185.33 : Bot (3/0)
+|   |   |   |   |   |   |   Fwd Pkts/s >= 294.42
+|   |   |   |   |   |   |   |   Flow Duration < 2086.5
+|   |   |   |   |   |   |   |   |   Fwd IAT Min < 2083.5
+|   |   |   |   |   |   |   |   |   |   Fwd Pkt Len Max < 15.5
+|   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 1178.2
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 2001 : Benign (34/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 2001
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 2009
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8116 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8116 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 2009 : Benign (9/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 1178.2
+|   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 1692.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration < 1541.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 1522 : Benign (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 1522 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 1541.5 : Benign (24/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow Duration >= 1692.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Pkt Len Max >= 15.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Min >= 2083.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   Flow Duration >= 2086.5
+|   |   |   |   |   |   |   |   |   Fwd IAT Min < 6151
+|   |   |   |   |   |   |   |   |   |   Flow IAT Max < 4660.5
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 4653.5
+|   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 2229 : Bot (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 2229 : Benign (196/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 4653.5 : Bot (1/0)
+|   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 4660.5 : Benign (105/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Min >= 6151
+|   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 313.41 : Benign (16/0)
+|   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 313.41
+|   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 6139.5 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 6139.5 : Benign (9/0)
+|   |   |   |   |   Subflow Fwd Byts >= 330
+|   |   |   |   |   |   Dst Port < 4262.5 : Benign (634/0)
+|   |   |   |   |   |   Dst Port >= 4262.5
+|   |   |   |   |   |   |   Dst Port < 30322.5 : Bot (1/0)
+|   |   |   |   |   |   |   Dst Port >= 30322.5 : Benign (1/0)
+|   |   |   |   Flow Pkts/s >= 1833.18
+|   |   |   |   |   Fwd Pkts/s < 2084.42
+|   |   |   |   |   |   Fwd IAT Max < 962 : Benign (2/0)
+|   |   |   |   |   |   Fwd IAT Max >= 962
+|   |   |   |   |   |   |   Flow IAT Min < 1058.5
+|   |   |   |   |   |   |   |   Flow IAT Max < 1009.5
+|   |   |   |   |   |   |   |   |   Flow IAT Max < 990
+|   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 2047.09 : Bot (5/0)
+|   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 2047.09
+|   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 33005 : Bot (7/0)
+|   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 33005 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   Flow IAT Max >= 990
+|   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 8171 : Bot (4/0)
+|   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 8171 : Benign (8/0)
+|   |   |   |   |   |   |   |   Flow IAT Max >= 1009.5
+|   |   |   |   |   |   |   |   |   Fwd Pkt Len Mean < 19.5
+|   |   |   |   |   |   |   |   |   |   Flow Duration < 1015.5
+|   |   |   |   |   |   |   |   |   |   |   Dst Port < 30506 : Bot (4/0)
+|   |   |   |   |   |   |   |   |   |   |   Dst Port >= 30506 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   Flow Duration >= 1015.5 : Bot (15/0)
+|   |   |   |   |   |   |   |   |   Fwd Pkt Len Mean >= 19.5
+|   |   |   |   |   |   |   |   |   |   Flow Duration < 11671 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   Flow Duration >= 11671 : Bot (1/0)
+|   |   |   |   |   |   |   Flow IAT Min >= 1058.5
+|   |   |   |   |   |   |   |   Init Fwd Win Byts < 6139.5 : Bot (4/0)
+|   |   |   |   |   |   |   |   Init Fwd Win Byts >= 6139.5 : Benign (6/0)
+|   |   |   |   |   Fwd Pkts/s >= 2084.42
+|   |   |   |   |   |   Flow IAT Max < 921.5 : Benign (2/0)
+|   |   |   |   |   |   Flow IAT Max >= 921.5
+|   |   |   |   |   |   |   Flow IAT Mean < 938
+|   |   |   |   |   |   |   |   Flow IAT Max < 935.5
+|   |   |   |   |   |   |   |   |   Flow Duration < 925.5
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 924.5 : Bot (7/0)
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 924.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   Flow Duration >= 925.5 : Bot (14/0)
+|   |   |   |   |   |   |   |   Flow IAT Max >= 935.5
+|   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 7776 : Bot (2/0)
+|   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 7776 : Benign (1/0)
+|   |   |   |   |   |   |   Flow IAT Mean >= 938 : Bot (16/0)
+|   |   |   Flow IAT Mean >= 9828.67
+|   |   |   |   Bwd IAT Tot < 60631.5
+|   |   |   |   |   Init Fwd Win Byts < 2261.5 : Bot (3/0)
+|   |   |   |   |   Init Fwd Win Byts >= 2261.5 : Benign (39976/0)
+|   |   |   |   Bwd IAT Tot >= 60631.5
+|   |   |   |   |   Fwd IAT Tot < 56641.5
+|   |   |   |   |   |   TotLen Fwd Pkts < 381 : Bot (3/0)
+|   |   |   |   |   |   TotLen Fwd Pkts >= 381 : Benign (4/0)
+|   |   |   |   |   Fwd IAT Tot >= 56641.5 : Benign (80/0)
+Bwd IAT Tot >= 70657.5
+|   Flow IAT Max < 529122
+|   |   Tot Fwd Pkts < 4.5
+|   |   |   Dst Port < 6718.5 : Benign (5552/0)
+|   |   |   Dst Port >= 6718.5
+|   |   |   |   Init Fwd Win Byts < 4253.5 : Benign (18/0)
+|   |   |   |   Init Fwd Win Byts >= 4253.5 : Bot (349/0)
+|   |   Tot Fwd Pkts >= 4.5 : Benign (28837/0)
+|   Flow IAT Max >= 529122
+|   |   Fwd Pkts/s < 0.09
+|   |   |   RST Flag Cnt < 0.5 : Benign (4720/0)
+|   |   |   RST Flag Cnt >= 0.5
+|   |   |   |   Active Max < 786615
+|   |   |   |   |   Idle Mean < 16800000 : Benign (12/0)
+|   |   |   |   |   Idle Mean >= 16800000 : Bot (9/0)
+|   |   |   |   Active Max >= 786615 : Benign (94/0)
+|   |   Fwd Pkts/s >= 0.09 : Benign (260081/0)
+
+Size of the tree : 671
+
+Time taken to build model: 19.18 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.27 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      356483               99.991  %
+Incorrectly Classified Instances        32                0.009  %
+Kappa statistic                          0.9998
+Mean absolute error                      0.0001
+Root mean squared error                  0.0095
+Relative absolute error                  0.0226 %
+Root relative squared error              2.1246 %
+Total Number of Instances           356515     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Benign
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Bot
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 258873     20 |      a = Benign
+     12  97610 |      b = Bot
+

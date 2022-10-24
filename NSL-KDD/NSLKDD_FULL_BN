@@ -1,0 +1,133 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     KDDTrain+Test_filtro_RemoveUseless-weka.filters.unsupervised.instance.Randomize-S42
+Instances:    148517
+Attributes:   41
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=41 #classindex=40
+Network structure (nodes followed by parents)
+duration(36): class 
+protocol_type(3): class 
+service(70): class 
+flag(11): class 
+src_bytes(86): class 
+dst_bytes(53): class 
+land(1): class 
+wrong_fragment(2): class 
+urgent(1): class 
+hot(8): class 
+num_failed_logins(3): class 
+logged_in(2): class 
+num_compromised(4): class 
+root_shell(1): class 
+su_attempted(2): class 
+num_root(2): class 
+num_file_creations(3): class 
+num_shells(1): class 
+num_access_files(2): class 
+is_host_login(1): class 
+is_guest_login(1): class 
+count(27): class 
+srv_count(24): class 
+serror_rate(12): class 
+srv_serror_rate(7): class 
+rerror_rate(8): class 
+srv_rerror_rate(8): class 
+same_srv_rate(25): class 
+diff_srv_rate(22): class 
+srv_diff_host_rate(10): class 
+dst_host_count(9): class 
+dst_host_srv_count(20): class 
+dst_host_same_srv_rate(17): class 
+dst_host_diff_srv_rate(21): class 
+dst_host_same_src_port_rate(19): class 
+dst_host_srv_diff_host_rate(13): class 
+dst_host_serror_rate(12): class 
+dst_host_srv_serror_rate(9): class 
+dst_host_rerror_rate(10): class 
+dst_host_srv_rerror_rate(8): class 
+class(2): 
+LogScore Bayes: -4633493.619539618
+LogScore BDeu: -4638229.654373995
+LogScore MDL: -4638464.786195564
+LogScore ENTROPY: -4632099.71715372
+LogScore AIC: -4633168.71715372
+
+
+Time taken to build model: 5.81 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.18 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       48108               95.2709 %
+Incorrectly Classified Instances      2388                4.7291 %
+Kappa statistic                          0.905 
+Mean absolute error                      0.0495
+Root mean squared error                  0.2041
+Relative absolute error                  9.9234 %
+Root relative squared error             40.8689 %
+Total Number of Instances            50496     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,980    0,077    0,933      0,980    0,956      0,906    0,994     0,994     normal
+                 0,923    0,020    0,977      0,923    0,949      0,906    0,994     0,993     anomaly
+Weighted Avg.    0,953    0,050    0,954      0,953    0,953      0,906    0,994     0,994     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 25882   532 |     a = normal
+  1856 22226 |     b = anomaly
+

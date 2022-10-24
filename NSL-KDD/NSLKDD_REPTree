@@ -1,0 +1,314 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.REPTree -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+Relation:     KDDTrain-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    125973
+Attributes:   41
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+
+REPTree
+============
+
+service = aol : anomaly (2/0) [0/0]
+service = auth
+|   count < 8.5 : normal (159/7) [89/7]
+|   count >= 8.5 : anomaly (466/0) [241/2]
+service = bgp : anomaly (489/0) [221/0]
+service = courier : anomaly (518/0) [216/0]
+service = csnet_ns : anomaly (374/0) [171/0]
+service = ctf : anomaly (383/0) [180/0]
+service = daytime : anomaly (351/0) [170/0]
+service = discard : anomaly (353/0) [185/0]
+service = domain
+|   src_bytes < 19.5 : anomaly (359/0) [173/1]
+|   src_bytes >= 19.5 : normal (27/0) [10/0]
+service = domain_u
+|   src_bytes < 9 : anomaly (5/0) [4/0]
+|   src_bytes >= 9 : normal (6061/0) [2973/0]
+service = echo : anomaly (294/0) [140/0]
+service = eco_i
+|   src_bytes < 25 : anomaly (2775/0) [1314/0]
+|   src_bytes >= 25 : normal (319/0) [178/0]
+service = ecr_i
+|   src_bytes < 292
+|   |   src_bytes < 25 : anomaly (35/1) [9/0]
+|   |   src_bytes >= 25 : normal (119/0) [70/0]
+|   src_bytes >= 292 : anomaly (1874/0) [970/0]
+service = efs : anomaly (324/0) [161/0]
+service = exec : anomaly (329/0) [145/0]
+service = finger
+|   src_bytes < 2.5
+|   |   count < 5.5
+|   |   |   dst_host_count < 219.5
+|   |   |   |   flag = OTH : anomaly (0/0) [0/0]
+|   |   |   |   flag = REJ : anomaly (0/0) [0/0]
+|   |   |   |   flag = RSTO : normal (3/0) [3/0]
+|   |   |   |   flag = RSTOS0 : anomaly (1/0) [0/0]
+|   |   |   |   flag = RSTR : anomaly (1/0) [1/0]
+|   |   |   |   flag = S0
+|   |   |   |   |   srv_serror_rate < 0.75 : normal (4/0) [1/0]
+|   |   |   |   |   srv_serror_rate >= 0.75 : anomaly (16/3) [13/4]
+|   |   |   |   flag = S1 : anomaly (0/0) [0/0]
+|   |   |   |   flag = S2 : anomaly (0/0) [0/0]
+|   |   |   |   flag = S3 : anomaly (0/0) [0/0]
+|   |   |   |   flag = SF : anomaly (9/0) [4/0]
+|   |   |   |   flag = SH : anomaly (0/0) [0/0]
+|   |   |   dst_host_count >= 219.5 : anomaly (31/0) [17/1]
+|   |   count >= 5.5 : anomaly (738/0) [371/0]
+|   src_bytes >= 2.5
+|   |   count < 1.5 : normal (323/0) [159/0]
+|   |   count >= 1.5
+|   |   |   srv_count < 1.5
+|   |   |   |   dst_bytes < 81.5 : anomaly (5/1) [1/0]
+|   |   |   |   dst_bytes >= 81.5 : normal (27/1) [17/0]
+|   |   |   srv_count >= 1.5 : anomaly (14/0) [8/0]
+service = ftp
+|   duration < 11
+|   |   dst_host_count < 216
+|   |   |   hot < 26
+|   |   |   |   dst_host_srv_count < 4 : anomaly (13/1) [7/0]
+|   |   |   |   dst_host_srv_count >= 4 : normal (32/1) [22/1]
+|   |   |   hot >= 26 : anomaly (42/0) [25/0]
+|   |   dst_host_count >= 216 : anomaly (471/1) [238/0]
+|   duration >= 11
+|   |   duration < 2963.5
+|   |   |   num_file_creations < 0.5 : normal (580/0) [283/0]
+|   |   |   num_file_creations >= 0.5 : anomaly (4/0) [3/1]
+|   |   duration >= 2963.5 : anomaly (25/0) [9/0]
+service = ftp_data
+|   flag = OTH : normal (2/0) [0/0]
+|   flag = REJ : anomaly (69/0) [45/0]
+|   flag = RSTO : normal (0/0) [0/0]
+|   flag = RSTOS0 : anomaly (1/0) [0/0]
+|   flag = RSTR : anomaly (8/0) [1/0]
+|   flag = S0 : anomaly (750/0) [386/0]
+|   flag = S1 : normal (21/0) [16/0]
+|   flag = S2 : normal (6/1) [0/0]
+|   flag = S3 : normal (8/0) [5/0]
+|   flag = SF
+|   |   dst_host_same_src_port_rate < 0.98
+|   |   |   src_bytes < 353.5
+|   |   |   |   src_bytes < 326.5 : normal (1000/2) [486/1]
+|   |   |   |   src_bytes >= 326.5 : anomaly (29/0) [12/0]
+|   |   |   src_bytes >= 353.5
+|   |   |   |   duration < 3.5 : normal (2124/0) [1058/0]
+|   |   |   |   duration >= 3.5
+|   |   |   |   |   dst_host_srv_serror_rate < 0.01 : normal (14/0) [7/0]
+|   |   |   |   |   dst_host_srv_serror_rate >= 0.01 : anomaly (5/0) [7/1]
+|   |   dst_host_same_src_port_rate >= 0.98
+|   |   |   dst_host_srv_diff_host_rate < 0.1
+|   |   |   |   src_bytes < 353.5
+|   |   |   |   |   src_bytes < 326.5
+|   |   |   |   |   |   src_bytes < 5.5
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.04 : anomaly (15/0) [14/0]
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.04 : normal (3/0) [1/0]
+|   |   |   |   |   |   src_bytes >= 5.5
+|   |   |   |   |   |   |   src_bytes < 245.5 : normal (29/0) [16/1]
+|   |   |   |   |   |   |   src_bytes >= 245.5
+|   |   |   |   |   |   |   |   src_bytes < 249 : anomaly (4/0) [1/0]
+|   |   |   |   |   |   |   |   src_bytes >= 249 : normal (4/0) [2/0]
+|   |   |   |   |   src_bytes >= 326.5 : anomaly (39/1) [21/0]
+|   |   |   |   src_bytes >= 353.5
+|   |   |   |   |   duration < 2 : normal (133/1) [48/1]
+|   |   |   |   |   duration >= 2 : anomaly (15/1) [8/2]
+|   |   |   dst_host_srv_diff_host_rate >= 0.1 : anomaly (295/1) [151/2]
+|   flag = SH : anomaly (1/0) [0/0]
+service = gopher : anomaly (349/0) [169/0]
+service = harvest : anomaly (2/0) [0/0]
+service = hostnames : anomaly (310/0) [150/0]
+service = http
+|   dst_host_same_srv_rate < 0.29
+|   |   dst_host_count < 49 : normal (18/0) [5/0]
+|   |   dst_host_count >= 49 : anomaly (885/0) [395/0]
+|   dst_host_same_srv_rate >= 0.29
+|   |   src_bytes < 10235.5
+|   |   |   dst_host_srv_serror_rate < 0.75 : normal (25322/5) [12712/5]
+|   |   |   dst_host_srv_serror_rate >= 0.75 : anomaly (28/0) [15/0]
+|   |   src_bytes >= 10235.5 : anomaly (630/2) [328/0]
+service = http_2784 : anomaly (1/0) [0/0]
+service = http_443 : anomaly (343/0) [187/0]
+service = http_8001 : anomaly (1/0) [1/0]
+service = imap4 : anomaly (387/3) [260/0]
+service = IRC : normal (122/1) [65/0]
+service = iso_tsap : anomaly (454/0) [233/0]
+service = klogin : anomaly (286/0) [147/0]
+service = kshell : anomaly (202/0) [97/0]
+service = ldap : anomaly (290/0) [120/0]
+service = link : anomaly (312/0) [163/0]
+service = login : anomaly (277/0) [152/0]
+service = mtp : anomaly (304/0) [135/0]
+service = name : anomaly (282/0) [169/0]
+service = netbios_dgm : anomaly (262/0) [143/0]
+service = netbios_ns : anomaly (228/0) [119/0]
+service = netbios_ssn : anomaly (250/0) [112/0]
+service = netstat : anomaly (249/0) [111/0]
+service = nnsp : anomaly (412/0) [218/0]
+service = nntp : anomaly (203/0) [93/0]
+service = ntp_u : normal (107/0) [61/0]
+service = other
+|   src_bytes < 41.5
+|   |   dst_host_count < 98 : normal (35/1) [14/3]
+|   |   dst_host_count >= 98 : anomaly (1153/3) [596/1]
+|   src_bytes >= 41.5
+|   |   src_bytes < 2611129.5 : normal (1722/1) [834/0]
+|   |   src_bytes >= 2611129.5 : anomaly (4/0) [1/0]
+service = pm_dump : anomaly (2/0) [3/0]
+service = pop_2 : anomaly (49/0) [29/0]
+service = pop_3
+|   src_bytes < 20.5 : anomaly (53/0) [26/1]
+|   src_bytes >= 20.5 : normal (123/0) [62/0]
+service = printer : anomaly (47/0) [22/0]
+service = private
+|   src_bytes < 102.5 : anomaly (13753/2) [6914/2]
+|   src_bytes >= 102.5
+|   |   src_bytes < 156 : normal (652/0) [319/0]
+|   |   src_bytes >= 156
+|   |   |   dst_host_count < 251.5 : anomaly (141/1) [68/0]
+|   |   |   dst_host_count >= 251.5 : normal (3/0) [3/0]
+service = red_i : normal (4/0) [4/0]
+service = remote_job : anomaly (48/0) [30/0]
+service = rje : anomaly (48/0) [38/0]
+service = shell : anomaly (46/4) [19/0]
+service = smtp
+|   src_bytes < 14.5
+|   |   count < 5.5
+|   |   |   dst_host_serror_rate < 0.81
+|   |   |   |   flag = OTH : anomaly (1/0) [0/0]
+|   |   |   |   flag = REJ : normal (1/0) [2/0]
+|   |   |   |   flag = RSTO
+|   |   |   |   |   dst_host_diff_srv_rate < 0.39 : normal (21/0) [6/0]
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.39 : anomaly (3/0) [1/0]
+|   |   |   |   flag = RSTOS0 : normal (0/0) [0/0]
+|   |   |   |   flag = RSTR : anomaly (2/0) [4/1]
+|   |   |   |   flag = S0 : normal (46/0) [21/0]
+|   |   |   |   flag = S1 : normal (5/0) [3/0]
+|   |   |   |   flag = S2 : normal (0/0) [0/0]
+|   |   |   |   flag = S3 : normal (0/0) [0/0]
+|   |   |   |   flag = SF : anomaly (11/0) [2/0]
+|   |   |   |   flag = SH : normal (0/0) [0/0]
+|   |   |   dst_host_serror_rate >= 0.81 : anomaly (21/1) [7/1]
+|   |   count >= 5.5 : anomaly (149/0) [75/0]
+|   src_bytes >= 14.5
+|   |   dst_host_rerror_rate < 0.3 : normal (4456/0) [2246/1]
+|   |   dst_host_rerror_rate >= 0.3
+|   |   |   dst_host_rerror_rate < 0.33 : anomaly (7/1) [1/0]
+|   |   |   dst_host_rerror_rate >= 0.33 : normal (154/0) [68/3]
+service = sql_net : anomaly (158/0) [87/0]
+service = ssh : anomaly (211/4) [100/1]
+service = sunrpc : anomaly (251/0) [130/0]
+service = supdup : anomaly (373/0) [171/0]
+service = systat : anomaly (308/0) [169/0]
+service = telnet
+|   flag = OTH : normal (1/0) [2/1]
+|   flag = REJ : anomaly (0/0) [0/0]
+|   flag = RSTO
+|   |   dst_host_rerror_rate < 0.13 : normal (33/0) [18/0]
+|   |   dst_host_rerror_rate >= 0.13 : anomaly (86/1) [54/4]
+|   flag = RSTOS0 : anomaly (1/0) [1/0]
+|   flag = RSTR : normal (19/6) [11/3]
+|   flag = S0
+|   |   dst_host_serror_rate < 0.32 : normal (4/0) [1/0]
+|   |   dst_host_serror_rate >= 0.32 : anomaly (804/0) [431/0]
+|   flag = S1 : normal (56/0) [16/0]
+|   flag = S2 : anomaly (0/0) [0/0]
+|   flag = S3 : anomaly (3/1) [1/0]
+|   flag = SF
+|   |   hot < 2.5 : normal (533/23) [250/8]
+|   |   hot >= 2.5
+|   |   |   duration < 5054 : anomaly (13/0) [7/1]
+|   |   |   duration >= 5054 : normal (5/0) [2/0]
+|   flag = SH : anomaly (0/0) [1/0]
+service = tftp_u : normal (2/0) [1/0]
+service = tim_i : normal (4/2) [4/1]
+service = time
+|   dst_host_same_srv_rate < 0.55 : anomaly (377/0) [201/0]
+|   dst_host_same_srv_rate >= 0.55 : normal (46/0) [30/0]
+service = urh_i : normal (7/0) [3/0]
+service = urp_i
+|   src_bytes < 50 : anomaly (2/0) [1/0]
+|   src_bytes >= 50 : normal (375/0) [224/0]
+service = uucp : anomaly (526/0) [254/0]
+service = uucp_path : anomaly (462/0) [227/0]
+service = vmnet : anomaly (410/0) [207/0]
+service = whois : anomaly (481/0) [212/0]
+service = X11
+|   same_srv_rate < 0.38 : anomaly (4/0) [1/0]
+|   same_srv_rate >= 0.38 : normal (42/1) [26/0]
+service = Z39_50 : anomaly (579/0) [283/0]
+
+Size of the tree : 227
+
+Time taken to build model: 3.85 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.1 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       18375               81.5073 %
+Incorrectly Classified Instances      4169               18.4927 %
+Kappa statistic                          0.634 
+Mean absolute error                      0.1884
+Root mean squared error                  0.4268
+Relative absolute error                 37.3272 %
+Root relative squared error             84.3598 %
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,909    0,256    0,729      0,909    0,809      0,649    0,822     0,721     normal
+                 0,744    0,091    0,915      0,744    0,821      0,649    0,822     0,858     anomaly
+Weighted Avg.    0,815    0,162    0,835      0,815    0,816      0,649    0,822     0,799     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 8830  881 |    a = normal
+ 3288 9545 |    b = anomaly
+

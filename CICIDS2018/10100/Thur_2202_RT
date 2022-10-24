@@ -1,0 +1,172 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     Thursday-22-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1
+Instances:    104858
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+TotLen Fwd Pkts < 48512.5
+|   Tot Bwd Pkts < 0.5
+|   |   Init Fwd Win Byts < 2044 : Benign (19263/0)
+|   |   Init Fwd Win Byts >= 2044
+|   |   |   Dst Port < 107.5
+|   |   |   |   PSH Flag Cnt < 0.5
+|   |   |   |   |   Flow IAT Max < 46.5
+|   |   |   |   |   |   Flow IAT Mean < 28.5 : Brute Force -Web (2/0)
+|   |   |   |   |   |   Flow IAT Mean >= 28.5
+|   |   |   |   |   |   |   Fwd IAT Max < 40.5 : SQL Injection (1/0)
+|   |   |   |   |   |   |   Fwd IAT Max >= 40.5 : Brute Force -Web (1/0)
+|   |   |   |   |   Flow IAT Max >= 46.5
+|   |   |   |   |   |   Fwd IAT Std < 24.04
+|   |   |   |   |   |   |   Fwd IAT Min < 1140
+|   |   |   |   |   |   |   |   Flow Duration < 1068.5
+|   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2297.59
+|   |   |   |   |   |   |   |   |   |   Fwd Pkts/s < 2247.83 : Benign (2/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2247.83 : Brute Force -Web (1/0)
+|   |   |   |   |   |   |   |   |   Fwd Pkts/s >= 2297.59
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 364.5
+|   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s < 5781.12 : Brute Force -Web (1/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow Pkts/s >= 5781.12
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max < 264.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean < 261
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 2145.5 : Brute Force -Web (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 2145.5 : Benign (84/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Mean >= 261 : Brute Force -Web (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Max >= 264.5 : Benign (13/0)
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 364.5 : Benign (10/0)
+|   |   |   |   |   |   |   |   Flow Duration >= 1068.5 : Brute Force -Web (1/0)
+|   |   |   |   |   |   |   Fwd IAT Min >= 1140 : Benign (18/0)
+|   |   |   |   |   |   Fwd IAT Std >= 24.04 : Brute Force -XSS (6/0)
+|   |   |   |   PSH Flag Cnt >= 0.5 : Benign (53/0)
+|   |   |   Dst Port >= 107.5 : Benign (9120/0)
+|   Tot Bwd Pkts >= 0.5
+|   |   Fwd IAT Min < 281.5 : Benign (57718/0)
+|   |   Fwd IAT Min >= 281.5
+|   |   |   Bwd Pkts/s < 1.45
+|   |   |   |   RST Flag Cnt < 0.5 : Benign (3756/0)
+|   |   |   |   RST Flag Cnt >= 0.5
+|   |   |   |   |   Fwd Seg Size Avg < 128.38
+|   |   |   |   |   |   Bwd IAT Max < 478893 : SQL Injection (2/0)
+|   |   |   |   |   |   Bwd IAT Max >= 478893 : Benign (115/0)
+|   |   |   |   |   Fwd Seg Size Avg >= 128.38
+|   |   |   |   |   |   Dst Port < 1734.5 : Brute Force -Web (6/0)
+|   |   |   |   |   |   Dst Port >= 1734.5 : Benign (5/0)
+|   |   |   Bwd Pkts/s >= 1.45 : Benign (14663/0)
+TotLen Fwd Pkts >= 48512.5
+|   Dst Port < 25171
+|   |   TotLen Bwd Pkts < 131197.5 : Brute Force -Web (6/0)
+|   |   TotLen Bwd Pkts >= 131197.5 : Brute Force -XSS (2/0)
+|   Dst Port >= 25171 : Benign (2/0)
+
+Size of the tree : 53
+
+Time taken to build model: 0.71 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 11.95 seconds
+
+=== Summary ===
+
+Correctly Classified Instances     1048454               99.9885 %
+Incorrectly Classified Instances       121                0.0115 %
+Kappa statistic                          0.8326
+Mean absolute error                      0.0001
+Root mean squared error                  0.0076
+Relative absolute error                 16.0952 %
+Root relative squared error             57.8223 %
+Total Number of Instances          1048575     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,119    1,000      1,000    1,000      0,882    0,941     1,000     Benign
+                 0,855    0,000    0,792      0,855    0,822      0,823    0,928     0,677     Brute Force -Web
+                 0,772    0,000    0,924      0,772    0,841      0,845    0,886     0,714     Brute Force -XSS
+                 0,265    0,000    0,346      0,265    0,300      0,303    0,632     0,092     SQL Injection
+Weighted Avg.    1,000    0,119    1,000      1,000    1,000      0,882    0,941     1,000     
+
+=== Confusion Matrix ===
+
+       a       b       c       d   <-- classified as
+ 1048171      27       5      10 |       a = Benign
+      29     213       0       7 |       b = Brute Force -Web
+       7      11      61       0 |       c = Brute Force -XSS
+       7      18       0       9 |       d = SQL Injection
+

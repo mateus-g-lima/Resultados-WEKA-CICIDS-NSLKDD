@@ -1,0 +1,87 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     KDDTrain+Test_filtro_RemoveUseless-weka.filters.unsupervised.instance.Randomize-S42
+Instances:    148517
+Attributes:   41
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 68.77 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 1.25 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       50293               99.598  %
+Incorrectly Classified Instances       203                0.402  %
+Kappa statistic                          0.9919
+Mean absolute error                      0.0082
+Root mean squared error                  0.0574
+Relative absolute error                  1.6508 %
+Root relative squared error             11.4969 %
+Total Number of Instances            50496     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,997    0,005    0,996      0,997    0,996      0,992    1,000     1,000     normal
+                 0,995    0,003    0,997      0,995    0,996      0,992    1,000     1,000     anomaly
+Weighted Avg.    0,996    0,004    0,996      0,996    0,996      0,992    1,000     1,000     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 26330    84 |     a = normal
+   119 23963 |     b = anomaly
+

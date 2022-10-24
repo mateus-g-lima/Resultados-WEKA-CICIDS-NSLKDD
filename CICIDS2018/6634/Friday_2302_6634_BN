@@ -1,0 +1,193 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     Friday-23-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R3
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=69 #classindex=68
+Network structure (nodes followed by parents)
+Dst Port(6): Label 
+Protocol(3): Label 
+Flow Duration(17): Label 
+Tot Fwd Pkts(11): Label 
+Tot Bwd Pkts(7): Label 
+TotLen Fwd Pkts(16): Label 
+TotLen Bwd Pkts(14): Label 
+Fwd Pkt Len Max(12): Label 
+Fwd Pkt Len Min(6): Label 
+Fwd Pkt Len Mean(17): Label 
+Fwd Pkt Len Std(17): Label 
+Bwd Pkt Len Max(10): Label 
+Bwd Pkt Len Min(3): Label 
+Bwd Pkt Len Mean(10): Label 
+Bwd Pkt Len Std(12): Label 
+Flow Byts/s(17): Label 
+Flow Pkts/s(17): Label 
+Flow IAT Mean(17): Label 
+Flow IAT Std(16): Label 
+Flow IAT Max(18): Label 
+Flow IAT Min(13): Label 
+Fwd IAT Tot(22): Label 
+Fwd IAT Mean(20): Label 
+Fwd IAT Std(18): Label 
+Fwd IAT Max(23): Label 
+Fwd IAT Min(13): Label 
+Bwd IAT Tot(16): Label 
+Bwd IAT Mean(15): Label 
+Bwd IAT Std(16): Label 
+Bwd IAT Max(13): Label 
+Bwd IAT Min(11): Label 
+Fwd PSH Flags(2): Label 
+Fwd Header Len(15): Label 
+Bwd Header Len(8): Label 
+Fwd Pkts/s(25): Label 
+Bwd Pkts/s(15): Label 
+Pkt Len Min(5): Label 
+Pkt Len Max(12): Label 
+Pkt Len Mean(18): Label 
+Pkt Len Std(12): Label 
+Pkt Len Var(12): Label 
+FIN Flag Cnt(1): Label 
+SYN Flag Cnt(2): Label 
+RST Flag Cnt(2): Label 
+PSH Flag Cnt(1): Label 
+ACK Flag Cnt(1): Label 
+URG Flag Cnt(2): Label 
+ECE Flag Cnt(2): Label 
+Down/Up Ratio(2): Label 
+Pkt Size Avg(17): Label 
+Fwd Seg Size Avg(17): Label 
+Bwd Seg Size Avg(10): Label 
+Subflow Fwd Pkts(11): Label 
+Subflow Fwd Byts(16): Label 
+Subflow Bwd Pkts(7): Label 
+Subflow Bwd Byts(14): Label 
+Init Fwd Win Byts(8): Label 
+Init Bwd Win Byts(11): Label 
+Fwd Act Data Pkts(7): Label 
+Fwd Seg Size Min(2): Label 
+Active Mean(4): Label 
+Active Std(2): Label 
+Active Max(4): Label 
+Active Min(4): Label 
+Idle Mean(6): Label 
+Idle Std(5): Label 
+Idle Max(7): Label 
+Idle Min(5): Label 
+Label(4): 
+LogScore Bayes: -7.766251901170434E7
+LogScore BDeu: -7.767316000508101E7
+LogScore MDL: -7.768002239839362E7
+LogScore ENTROPY: -7.766192432675417E7
+LogScore AIC: -7.766453532675417E7
+
+
+Time taken to build model: 133.48 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 3.12 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      338463               94.9365 %
+Incorrectly Classified Instances     18052                5.0635 %
+Kappa statistic                          0.0184
+Mean absolute error                      0.0276
+Root mean squared error                  0.1485
+Relative absolute error               5038.2457 %
+Root relative squared error            886.9122 %
+Total Number of Instances           356515     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,949    0,035    1,000      0,949    0,974      0,098    0,989     1,000     Benign
+                 0,714    0,002    0,131      0,714    0,221      0,305    0,977     0,127     Brute Force -Web
+                 0,891    0,018    0,007      0,891    0,015      0,080    0,977     0,824     Brute Force -XSS
+                 1,000    0,031    0,002      1,000    0,003      0,041    0,996     0,778     SQL Injection
+Weighted Avg.    0,949    0,035    0,999      0,949    0,974      0,098    0,989     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c      d   <-- classified as
+ 338305    596   6523  10891 |      a = Benign
+      7     90     18     11 |      b = Brute Force -Web
+      0      2     49      4 |      c = Brute Force -XSS
+      0      0      0     19 |      d = SQL Injection
+

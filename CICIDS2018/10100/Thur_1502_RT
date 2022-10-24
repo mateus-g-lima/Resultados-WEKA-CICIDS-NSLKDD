@@ -1,0 +1,288 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     Thursday-15-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1
+Instances:    104858
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+Flow IAT Mean < 605820.45
+|   Bwd Seg Size Avg < 220.39
+|   |   Flow IAT Mean < 15.17
+|   |   |   TotLen Fwd Pkts < 4
+|   |   |   |   Flow IAT Mean < 1.5 : Benign (1418/0)
+|   |   |   |   Flow IAT Mean >= 1.5
+|   |   |   |   |   Flow Duration < 7.5
+|   |   |   |   |   |   ACK Flag Cnt < 0.5
+|   |   |   |   |   |   |   Flow IAT Max < 2.5
+|   |   |   |   |   |   |   |   Dst Port < 25262.5 : DoS attacks-Slowloris (1/0)
+|   |   |   |   |   |   |   |   Dst Port >= 25262.5 : Benign (1/0)
+|   |   |   |   |   |   |   Flow IAT Max >= 2.5 : DoS attacks-Slowloris (2/0)
+|   |   |   |   |   |   ACK Flag Cnt >= 0.5 : Benign (68/0)
+|   |   |   |   |   Flow Duration >= 7.5 : Benign (523/0)
+|   |   |   TotLen Fwd Pkts >= 4
+|   |   |   |   Subflow Fwd Byts < 19.5 : DoS attacks-Slowloris (80/0)
+|   |   |   |   Subflow Fwd Byts >= 19.5
+|   |   |   |   |   Fwd Pkt Len Min < 184.5 : Benign (1267/0)
+|   |   |   |   |   Fwd Pkt Len Min >= 184.5
+|   |   |   |   |   |   TotLen Fwd Pkts < 477 : DoS attacks-Slowloris (1/0)
+|   |   |   |   |   |   TotLen Fwd Pkts >= 477 : Benign (1/0)
+|   |   Flow IAT Mean >= 15.17
+|   |   |   Bwd Pkt Len Min < 14.5
+|   |   |   |   Bwd IAT Min < 828027
+|   |   |   |   |   Flow IAT Max < 41.5
+|   |   |   |   |   |   Fwd IAT Min < 22.5
+|   |   |   |   |   |   |   Fwd Pkt Len Min < 4 : Benign (2453/0)
+|   |   |   |   |   |   |   Fwd Pkt Len Min >= 4
+|   |   |   |   |   |   |   |   Fwd Seg Size Min < 26 : Benign (10/0)
+|   |   |   |   |   |   |   |   Fwd Seg Size Min >= 26 : DoS attacks-Slowloris (1/0)
+|   |   |   |   |   |   Fwd IAT Min >= 22.5
+|   |   |   |   |   |   |   ACK Flag Cnt < 0.5
+|   |   |   |   |   |   |   |   Dst Port < 24790 : DoS attacks-Slowloris (5/0)
+|   |   |   |   |   |   |   |   Dst Port >= 24790 : Benign (44/0)
+|   |   |   |   |   |   |   ACK Flag Cnt >= 0.5 : Benign (1416/0)
+|   |   |   |   |   Flow IAT Max >= 41.5
+|   |   |   |   |   |   Bwd Pkt Len Std < 1.44
+|   |   |   |   |   |   |   Fwd Pkt Len Std < 115.46
+|   |   |   |   |   |   |   |   Fwd Pkt Len Max < 0.5
+|   |   |   |   |   |   |   |   |   ACK Flag Cnt < 0.5
+|   |   |   |   |   |   |   |   |   |   Dst Port < 107.5
+|   |   |   |   |   |   |   |   |   |   |   Tot Fwd Pkts < 2.5
+|   |   |   |   |   |   |   |   |   |   |   |   FIN Flag Cnt < 0.5 : Benign (86/0)
+|   |   |   |   |   |   |   |   |   |   |   |   FIN Flag Cnt >= 0.5 : DoS attacks-Slowloris (2/0)
+|   |   |   |   |   |   |   |   |   |   |   Tot Fwd Pkts >= 2.5 : Benign (262/0)
+|   |   |   |   |   |   |   |   |   |   Dst Port >= 107.5 : Benign (2414/0)
+|   |   |   |   |   |   |   |   |   ACK Flag Cnt >= 0.5 : Benign (11407/0)
+|   |   |   |   |   |   |   |   Fwd Pkt Len Max >= 0.5 : Benign (5312/0)
+|   |   |   |   |   |   |   Fwd Pkt Len Std >= 115.46
+|   |   |   |   |   |   |   |   Pkt Len Std < 124.37
+|   |   |   |   |   |   |   |   |   Flow IAT Min < 22.5 : DoS attacks-Slowloris (5/0)
+|   |   |   |   |   |   |   |   |   Flow IAT Min >= 22.5 : Benign (2/0)
+|   |   |   |   |   |   |   |   Pkt Len Std >= 124.37 : Benign (49/0)
+|   |   |   |   |   |   Bwd Pkt Len Std >= 1.44 : Benign (10240/0)
+|   |   |   |   Bwd IAT Min >= 828027
+|   |   |   |   |   Flow Byts/s < 798.13 : Benign (10/0)
+|   |   |   |   |   Flow Byts/s >= 798.13 : DoS attacks-Slowloris (2/0)
+|   |   |   Bwd Pkt Len Min >= 14.5 : Benign (32694/0)
+|   Bwd Seg Size Avg >= 220.39
+|   |   Tot Bwd Pkts < 3.5
+|   |   |   Fwd Seg Size Min < 26 : Benign (806/0)
+|   |   |   Fwd Seg Size Min >= 26
+|   |   |   |   TotLen Bwd Pkts < 589 : DoS attacks-Slowloris (15/0)
+|   |   |   |   TotLen Bwd Pkts >= 589 : DoS attacks-GoldenEye (421/0)
+|   |   Tot Bwd Pkts >= 3.5 : Benign (8327/0)
+Flow IAT Mean >= 605820.45
+|   Flow Pkts/s < 0.67
+|   |   Bwd IAT Max < 74336913.5
+|   |   |   Init Fwd Win Byts < 231.5
+|   |   |   |   Flow Pkts/s < 0.03
+|   |   |   |   |   ACK Flag Cnt < 0.5 : Benign (1162/0)
+|   |   |   |   |   ACK Flag Cnt >= 0.5 : DoS attacks-Slowloris (1/0)
+|   |   |   |   Flow Pkts/s >= 0.03
+|   |   |   |   |   Tot Fwd Pkts < 2.5
+|   |   |   |   |   |   Protocol < 11.5
+|   |   |   |   |   |   |   Fwd IAT Tot < 7302740
+|   |   |   |   |   |   |   |   Fwd Seg Size Min < 26 : Benign (41/0)
+|   |   |   |   |   |   |   |   Fwd Seg Size Min >= 26 : DoS attacks-GoldenEye (7/0)
+|   |   |   |   |   |   |   Fwd IAT Tot >= 7302740
+|   |   |   |   |   |   |   |   Bwd Header Len < 26
+|   |   |   |   |   |   |   |   |   ACK Flag Cnt < 0.5 : Benign (57/0)
+|   |   |   |   |   |   |   |   |   ACK Flag Cnt >= 0.5
+|   |   |   |   |   |   |   |   |   |   Dst Port < 24865 : DoS attacks-GoldenEye (714/0)
+|   |   |   |   |   |   |   |   |   |   Dst Port >= 24865 : Benign (28/0)
+|   |   |   |   |   |   |   |   Bwd Header Len >= 26 : DoS attacks-Slowloris (15/0)
+|   |   |   |   |   |   Protocol >= 11.5 : Benign (90/0)
+|   |   |   |   |   Tot Fwd Pkts >= 2.5 : Benign (440/0)
+|   |   |   Init Fwd Win Byts >= 231.5
+|   |   |   |   Fwd Seg Size Min < 30 : Benign (12162/0)
+|   |   |   |   Fwd Seg Size Min >= 30
+|   |   |   |   |   Bwd Pkt Len Mean < 125.7
+|   |   |   |   |   |   Fwd Pkt Len Std < 89.12 : Benign (114/0)
+|   |   |   |   |   |   Fwd Pkt Len Std >= 89.12 : DoS attacks-Slowloris (26/0)
+|   |   |   |   |   Bwd Pkt Len Mean >= 125.7
+|   |   |   |   |   |   Bwd Pkt Len Std < 259.19 : Benign (1/0)
+|   |   |   |   |   |   Bwd Pkt Len Std >= 259.19 : DoS attacks-GoldenEye (51/0)
+|   |   Bwd IAT Max >= 74336913.5
+|   |   |   Init Bwd Win Byts < -0.5 : Benign (19/0)
+|   |   |   Init Bwd Win Byts >= -0.5
+|   |   |   |   Bwd IAT Tot < 99244453 : Benign (11/0)
+|   |   |   |   Bwd IAT Tot >= 99244453
+|   |   |   |   |   TotLen Fwd Pkts < 2876.5
+|   |   |   |   |   |   Flow Duration < 119551400.5 : DoS attacks-Slowloris (704/0)
+|   |   |   |   |   |   Flow Duration >= 119551400.5 : Benign (1/0)
+|   |   |   |   |   TotLen Fwd Pkts >= 2876.5 : DoS attacks-GoldenEye (5/0)
+|   Flow Pkts/s >= 0.67
+|   |   Bwd Seg Size Avg < 165.46
+|   |   |   Fwd IAT Mean < 1359827
+|   |   |   |   Pkt Len Mean < 0.25
+|   |   |   |   |   Dst Port < 261.5
+|   |   |   |   |   |   Flow IAT Std < 78552.49
+|   |   |   |   |   |   |   ACK Flag Cnt < 0.5 : Benign (20/0)
+|   |   |   |   |   |   |   ACK Flag Cnt >= 0.5
+|   |   |   |   |   |   |   |   Fwd IAT Min < 810569.5 : Benign (5/0)
+|   |   |   |   |   |   |   |   Fwd IAT Min >= 810569.5
+|   |   |   |   |   |   |   |   |   Fwd IAT Min < 1207933
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Min < 980994.5
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 972017.5
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max < 899830.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min < 896193 : DoS attacks-GoldenEye (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 896193 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   Fwd IAT Max >= 899830.5 : DoS attacks-GoldenEye (8/0)
+|   |   |   |   |   |   |   |   |   |   |   Flow IAT Min >= 972017.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Min >= 980994.5 : DoS attacks-GoldenEye (9/0)
+|   |   |   |   |   |   |   |   |   Fwd IAT Min >= 1207933 : Benign (1/0)
+|   |   |   |   |   |   Flow IAT Std >= 78552.49 : Benign (35/0)
+|   |   |   |   |   Dst Port >= 261.5 : Benign (1296/0)
+|   |   |   |   Pkt Len Mean >= 0.25 : Benign (3228/0)
+|   |   |   Fwd IAT Mean >= 1359827
+|   |   |   |   TotLen Fwd Pkts < 0.5
+|   |   |   |   |   Fwd IAT Min < 1221683
+|   |   |   |   |   |   Fwd IAT Max < 2548653
+|   |   |   |   |   |   |   Fwd IAT Mean < 1506542.25 : Benign (11/0)
+|   |   |   |   |   |   |   Fwd IAT Mean >= 1506542.25
+|   |   |   |   |   |   |   |   Flow IAT Mean < 1544664.25
+|   |   |   |   |   |   |   |   |   Flow Duration < 3039042.5
+|   |   |   |   |   |   |   |   |   |   Fwd Seg Size Min < 32 : Benign (3/0)
+|   |   |   |   |   |   |   |   |   |   Fwd Seg Size Min >= 32
+|   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 28041.5 : DoS attacks-Slowloris (129/0)
+|   |   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 28041.5 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   Flow Duration >= 3039042.5 : DoS attacks-Slowloris (84/0)
+|   |   |   |   |   |   |   |   Flow IAT Mean >= 1544664.25
+|   |   |   |   |   |   |   |   |   Flow IAT Max < 2084700
+|   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts < 28041.5 : DoS attacks-Slowloris (1/0)
+|   |   |   |   |   |   |   |   |   |   Init Fwd Win Byts >= 28041.5 : Benign (12/0)
+|   |   |   |   |   |   |   |   |   Flow IAT Max >= 2084700
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Mean < 1551192 : Benign (1/0)
+|   |   |   |   |   |   |   |   |   |   Fwd IAT Mean >= 1551192
+|   |   |   |   |   |   |   |   |   |   |   Dst Port < 15191.5 : DoS attacks-Slowloris (13/0)
+|   |   |   |   |   |   |   |   |   |   |   Dst Port >= 15191.5 : Benign (1/0)
+|   |   |   |   |   |   Fwd IAT Max >= 2548653 : Benign (349/0)
+|   |   |   |   |   Fwd IAT Min >= 1221683
+|   |   |   |   |   |   Init Fwd Win Byts < 227.5
+|   |   |   |   |   |   |   Fwd Header Len < 52 : Benign (10/0)
+|   |   |   |   |   |   |   Fwd Header Len >= 52 : DoS attacks-GoldenEye (677/0)
+|   |   |   |   |   |   Init Fwd Win Byts >= 227.5 : Benign (33/0)
+|   |   |   |   TotLen Fwd Pkts >= 0.5
+|   |   |   |   |   Bwd Seg Size Avg < 0.5
+|   |   |   |   |   |   Fwd Seg Size Min < 26 : Benign (64/0)
+|   |   |   |   |   |   Fwd Seg Size Min >= 26
+|   |   |   |   |   |   |   Fwd Pkts/s < 0.79 : DoS attacks-Slowloris (12/0)
+|   |   |   |   |   |   |   Fwd Pkts/s >= 0.79 : Benign (1/0)
+|   |   |   |   |   Bwd Seg Size Avg >= 0.5 : Benign (154/0)
+|   |   Bwd Seg Size Avg >= 165.46
+|   |   |   Init Fwd Win Byts < 18144 : Benign (1436/0)
+|   |   |   Init Fwd Win Byts >= 18144
+|   |   |   |   Fwd IAT Tot < 21512971
+|   |   |   |   |   Dst Port < 261.5 : DoS attacks-GoldenEye (2253/0)
+|   |   |   |   |   Dst Port >= 261.5 : Benign (2/0)
+|   |   |   |   Fwd IAT Tot >= 21512971 : Benign (7/0)
+
+Size of the tree : 171
+
+Time taken to build model: 1.35 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 10.29 seconds
+
+=== Summary ===
+
+Correctly Classified Instances     1048333               99.9769 %
+Incorrectly Classified Instances       242                0.0231 %
+Kappa statistic                          0.9976
+Mean absolute error                      0.0002
+Root mean squared error                  0.0124
+Relative absolute error                  0.2405 %
+Root relative squared error              6.9359 %
+Total Number of Instances          1048575     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,002    1,000      1,000    1,000      0,998    0,999     1,000     Benign
+                 0,999    0,000    0,999      0,999    0,999      0,999    1,000     0,998     DoS attacks-GoldenEye
+                 0,993    0,000    0,992      0,993    0,992      0,992    0,996     0,985     DoS attacks-Slowloris
+Weighted Avg.    1,000    0,002    1,000      1,000    1,000      0,998    0,999     1,000     
+
+=== Confusion Matrix ===
+
+      a      b      c   <-- classified as
+ 995952     40     85 |      a = Benign
+     34  41469      5 |      b = DoS attacks-GoldenEye
+     78      0  10912 |      c = DoS attacks-Slowloris
+

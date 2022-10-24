@@ -1,0 +1,95 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.DecisionTable -X 1 -S "weka.attributeSelection.BestFirst -D 1 -N 5"
+Relation:     KDDTrain+Test_filtro_RemoveUseless-weka.filters.unsupervised.instance.Randomize-S42
+Instances:    148517
+Attributes:   41
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+Decision Table:
+
+Number of training instances: 148517
+Number of Rules : 5803
+Non matches covered by Majority class.
+	Best first.
+	Start set: no attributes
+	Search direction: forward
+	Stale search after 5 node expansions
+	Total number of subsets evaluated: 448
+	Merit of best subset found:   98.7  
+Evaluation (for feature selection): CV (leave one out) 
+Feature set: 2,4,5,6,11,14,25,34,41
+
+Time taken to build model: 135.56 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.09 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       49751               98.5246 %
+Incorrectly Classified Instances       745                1.4754 %
+Kappa statistic                          0.9704
+Mean absolute error                      0.045 
+Root mean squared error                  0.1235
+Relative absolute error                  9.0141 %
+Root relative squared error             24.7294 %
+Total Number of Instances            50496     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,994    0,024    0,978      0,994    0,986      0,971    0,998     0,998     normal
+                 0,976    0,006    0,993      0,976    0,984      0,971    0,998     0,998     anomaly
+Weighted Avg.    0,985    0,016    0,985      0,985    0,985      0,971    0,998     0,998     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 26246   168 |     a = normal
+   577 23505 |     b = anomaly
+

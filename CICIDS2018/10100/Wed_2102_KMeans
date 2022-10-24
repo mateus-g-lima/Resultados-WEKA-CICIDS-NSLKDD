@@ -1,0 +1,197 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 1000 -num-slots 1 -S 10
+Relation:     Wednesday-21-02-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+Ignored:
+              Label
+Test mode:    Classes to clusters evaluation on training data
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 38373.68638419648
+
+Initial starting points (random):
+
+Cluster 0: 80,6,1709,2,0,0,0,0,0,0,0,0,0,0,0,0,1170.275015,1709,0,1709,1709,1709,1709,0,1709,1709,0,0,0,0,0,0,40,0,1170.275015,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,2,0,0,0,32738,-1,0,20,0,0,0,0,0,0,0,0
+Cluster 1: 56691,6,1248,5,2,935,325,935,0,187,418.144712,325,0,162.5,229.809704,1009615.385,5608.974359,208,264.143143,690,6,1248,312,453.308578,974,6,690,690,0,690,690,0,124,40,4006.410256,1602.564103,0,935,157.5,334.108622,111628.5714,0,0,1,1,0,0,1,0,180,187,162.5,5,935,2,325,65535,32768,1,20,0,0,0,0,0,0,0,0
+Cluster 2: 54456,6,19814,5,2,935,266,935,0,187,418.144712,266,0,133,188.090404,60613.70748,353.285556,3302.333333,7573.331834,18751,3,19814,4953.5,9418.818804,19073,3,18751,18751,0,18751,18751,0,124,40,252.346825,100.93873,0,935,150.125,330.514939,109240.125,0,0,1,1,0,0,1,0,171.571429,187,133,5,935,2,266,65535,32768,1,20,0,0,0,0,0,0,0,0
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                   Cluster#
+Attribute             Full Data           0           1           2
+                    (1048575.0)  (526221.0)  (358523.0)  (163831.0)
+===================================================================
+Dst Port              19587.641     85.1319  57126.6292     79.9724
+Protocol                  6.038      6.0756           6           6
+Flow Duration       399040.0989  785929.304   6650.8306   15055.098
+Tot Fwd Pkts           196.8099    387.8322           5      3.0024
+Tot Bwd Pkts             1.3097      0.0012           2      4.0017
+TotLen Fwd Pkts       6563.5808  12348.7321         935    299.2451
+TotLen Bwd Pkts        248.6527      0.0273     299.758     935.394
+Fwd Pkt Len Max        366.6938      0.5305         935    299.1361
+Fwd Pkt Len Min          0.2549       0.508           0           0
+Fwd Pkt Len Mean        79.7714      0.5145         187     99.6869
+Fwd Pkt Len Std        169.9519      0.0082    418.1447    172.6686
+Bwd Pkt Len Max        248.5879      0.0132     299.758     935.024
+Bwd Pkt Len Min          0.0033      0.0066           0           0
+Bwd Pkt Len Mean        87.7714      0.0087     149.879    233.7489
+Bwd Pkt Len Std        145.5142      0.0032    211.9609    467.4816
+Flow Byts/s         259916.0475    130.4641 642268.7526 257611.1761
+Flow Pkts/s           1877.9822    806.6494   3640.8907   1461.1781
+Flow IAT Mean        29776.4245  57922.5497   1108.4718   2107.9022
+Flow IAT Std         18185.0053  33234.9963   2427.4148    4328.271
+Flow IAT Max          66693.533 125223.2432   6010.5905  11494.3823
+Flow IAT Min         13292.3882  26481.9367       5.582      4.3549
+Fwd IAT Tot         398555.8734 786129.4667   6650.8306  11312.9695
+Fwd IAT Mean          30393.276   57937.874   1662.7076   4793.8701
+Fwd IAT Std          18730.5081  33176.2814   3125.2695   6481.1032
+Fwd IAT Max           66500.787 124990.2556   6332.6349  10304.3391
+Fwd IAT Min          13366.8715  26527.7797      5.8859     333.162
+Bwd IAT Tot           5032.6592   1301.3538   6002.7364  14894.6279
+Bwd IAT Mean          2822.5315     242.804   6002.7364   4149.0825
+Bwd IAT Std           1057.9688    275.6738           0   5885.9084
+Bwd IAT Max            4358.399    925.8378   6002.7364  11785.2776
+Bwd IAT Min           2105.2848     96.1281   6002.7364     29.5747
+Fwd PSH Flags                 0           0           0           0
+Fwd Header Len        1622.6738   3126.4964         124     72.0881
+Bwd Header Len           28.074      0.0251          40     92.0675
+Fwd Pkts/s            1386.5236    796.0377   2600.6362    626.2206
+Bwd Pkts/s             491.4585     10.6116   1040.2545    834.9575
+Pkt Len Min              0.2537      0.5056           0           0
+Pkt Len Max            466.0477      0.5341         935     935.024
+Pkt Len Mean            77.1311      0.5131    154.3447     154.254
+Pkt Len Std            165.6708        0.01    332.5698    332.5322
+Pkt Len Var          55097.0297      3.5055 110605.8635 110582.1075
+FIN Flag Cnt                  0           0           0           0
+SYN Flag Cnt                  0           0           0           0
+RST Flag Cnt             0.4981           0           1      0.9996
+PSH Flag Cnt             0.4983      0.0003           1           1
+ACK Flag Cnt             0.4981      0.9926           0           0
+URG Flag Cnt                  0      0.0001           0           0
+ECE Flag Cnt             0.4981           0           1      0.9996
+Down/Up Ratio            0.1564      0.0004           0      0.9997
+Pkt Size Avg            88.1475      0.5832     176.394    176.2861
+Fwd Seg Size Avg        79.7714      0.5145         187     99.6869
+Bwd Seg Size Avg        87.7714      0.0087     149.879    233.7489
+Subflow Fwd Pkts       196.8099    387.8322           5      3.0024
+Subflow Fwd Byts      6563.5808  12348.7321         935    299.2451
+Subflow Bwd Pkts         1.3097      0.0012           2      4.0017
+Subflow Bwd Byts       248.6527      0.0273     299.758     935.394
+Init Fwd Win Byts    48951.6991  32496.6577       65535  65514.4592
+Init Bwd Win Byts    11238.0261     -0.0864       32768    218.9879
+Fwd Act Data Pkts      194.1294    385.8392           1      1.0012
+Fwd Seg Size Min        19.9589     19.9166          20     20.0048
+Active Mean           7521.6718  14924.6789           0    203.6095
+Active Std             2589.427   5132.9696           0     86.2601
+Active Max           10036.0943  19910.6949           0    281.8255
+Active Min            5446.2533  10806.9915           0     146.121
+Idle Mean            31405.1417  62063.6947           0   1656.7497
+Idle Std             16026.4525  31872.9466           0    199.7401
+Idle Max              57230.699 113439.1315           0   1932.6437
+Idle Min             16334.8075  32083.1999           0     1497.99
+
+
+
+
+Time taken to build model (full training data) : 5.55 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       526221 ( 50%)
+1       358523 ( 34%)
+2       163831 ( 16%)
+
+
+Class attribute: Label
+Classes to Clusters:
+
+      0      1      2  <-- assigned to cluster
+   2229 358523     81 | Benign
+   1730      0      0 | DDOS attack-LOIC-UDP
+ 522262      0 163750 | DDOS attack-HOIC
+
+Cluster 0 <-- DDOS attack-HOIC
+Cluster 1 <-- Benign
+Cluster 2 <-- No class
+
+Incorrectly clustered instances :	167790.0	 16.0017 %
+

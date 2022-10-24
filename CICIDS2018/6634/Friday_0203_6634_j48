@@ -1,0 +1,176 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     Friday-02-03-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R3
+Instances:    1048575
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    split 66.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Dst Port <= 8079
+|   Protocol <= 0
+|   |   Flow IAT Min <= 40
+|   |   |   Fwd IAT Std <= 4262494.413
+|   |   |   |   Flow Duration <= 43255
+|   |   |   |   |   Fwd IAT Mean <= 494: Benign (14.0)
+|   |   |   |   |   Fwd IAT Mean > 494
+|   |   |   |   |   |   Tot Fwd Pkts <= 9: Benign (4.0)
+|   |   |   |   |   |   Tot Fwd Pkts > 9: Bot (17.0)
+|   |   |   |   Flow Duration > 43255: Benign (70.0)
+|   |   |   Fwd IAT Std > 4262494.413
+|   |   |   |   Flow IAT Max <= 32400000: Bot (129.0)
+|   |   |   |   Flow IAT Max > 32400000
+|   |   |   |   |   Fwd IAT Tot <= 101000000: Benign (5.0)
+|   |   |   |   |   Fwd IAT Tot > 101000000: Bot (6.0)
+|   |   Flow IAT Min > 40
+|   |   |   Fwd IAT Std <= 6943781.148
+|   |   |   |   Flow IAT Mean <= 2689.333333
+|   |   |   |   |   Tot Fwd Pkts <= 6: Benign (413.0/1.0)
+|   |   |   |   |   Tot Fwd Pkts > 6
+|   |   |   |   |   |   Tot Fwd Pkts <= 129: Bot (18.0)
+|   |   |   |   |   |   Tot Fwd Pkts > 129: Benign (12.0)
+|   |   |   |   Flow IAT Mean > 2689.333333: Benign (12138.0)
+|   |   |   Fwd IAT Std > 6943781.148
+|   |   |   |   Fwd IAT Mean <= 3525777.182
+|   |   |   |   |   Active Mean <= 133715.5: Bot (79.0/1.0)
+|   |   |   |   |   Active Mean > 133715.5: Benign (10.0)
+|   |   |   |   Fwd IAT Mean > 3525777.182
+|   |   |   |   |   Fwd IAT Min <= 675
+|   |   |   |   |   |   Flow IAT Min <= 461: Benign (31.0)
+|   |   |   |   |   |   Flow IAT Min > 461
+|   |   |   |   |   |   |   Active Mean <= 1109863.286: Bot (9.0)
+|   |   |   |   |   |   |   Active Mean > 1109863.286: Benign (3.0)
+|   |   |   |   |   Fwd IAT Min > 675: Benign (424.0)
+|   Protocol > 0: Benign (631000.0)
+Dst Port > 8079
+|   Dst Port <= 8080
+|   |   Fwd Seg Size Min <= 24: Bot (281608.0)
+|   |   Fwd Seg Size Min > 24
+|   |   |   Tot Bwd Pkts <= 1: Benign (3.0)
+|   |   |   Tot Bwd Pkts > 1: Bot (26.0)
+|   Dst Port > 8080
+|   |   Bwd Pkt Len Mean <= 139.885714
+|   |   |   Bwd IAT Min <= 442905
+|   |   |   |   Fwd Header Len <= 260: Benign (118053.0/3.0)
+|   |   |   |   Fwd Header Len > 260
+|   |   |   |   |   RST Flag Cnt <= 0: Benign (140.0)
+|   |   |   |   |   RST Flag Cnt > 0: Bot (59.0)
+|   |   |   Bwd IAT Min > 442905
+|   |   |   |   RST Flag Cnt <= 0: Benign (38.0)
+|   |   |   |   RST Flag Cnt > 0: Bot (60.0)
+|   |   Bwd Pkt Len Mean > 139.885714
+|   |   |   Pkt Size Avg <= 100.148148
+|   |   |   |   Flow IAT Min <= 34: Bot (4149.0)
+|   |   |   |   Flow IAT Min > 34
+|   |   |   |   |   Tot Fwd Pkts <= 3: Benign (3.0)
+|   |   |   |   |   Tot Fwd Pkts > 3: Bot (28.0)
+|   |   |   Pkt Size Avg > 100.148148: Benign (26.0)
+
+Number of Leaves  : 	30
+
+Size of the tree : 	59
+
+
+Time taken to build model: 127.32 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.61 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      356507               99.9978 %
+Incorrectly Classified Instances         8                0.0022 %
+Kappa statistic                          0.9999
+Mean absolute error                      0     
+Root mean squared error                  0.0048
+Relative absolute error                  0.0084 %
+Root relative squared error              1.0668 %
+Total Number of Instances           356515     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Benign
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Bot
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 258888      5 |      a = Benign
+      3  97619 |      b = Bot
+

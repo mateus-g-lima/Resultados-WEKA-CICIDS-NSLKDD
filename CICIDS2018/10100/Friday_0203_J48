@@ -1,0 +1,138 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     Friday-02-03-2018_TrafficForML_CICFlowMeter-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.supervised.instance.StratifiedRemoveFolds-S0-N10-F1
+Instances:    104858
+Attributes:   69
+              Dst Port
+              Protocol
+              Flow Duration
+              Tot Fwd Pkts
+              Tot Bwd Pkts
+              TotLen Fwd Pkts
+              TotLen Bwd Pkts
+              Fwd Pkt Len Max
+              Fwd Pkt Len Min
+              Fwd Pkt Len Mean
+              Fwd Pkt Len Std
+              Bwd Pkt Len Max
+              Bwd Pkt Len Min
+              Bwd Pkt Len Mean
+              Bwd Pkt Len Std
+              Flow Byts/s
+              Flow Pkts/s
+              Flow IAT Mean
+              Flow IAT Std
+              Flow IAT Max
+              Flow IAT Min
+              Fwd IAT Tot
+              Fwd IAT Mean
+              Fwd IAT Std
+              Fwd IAT Max
+              Fwd IAT Min
+              Bwd IAT Tot
+              Bwd IAT Mean
+              Bwd IAT Std
+              Bwd IAT Max
+              Bwd IAT Min
+              Fwd PSH Flags
+              Fwd Header Len
+              Bwd Header Len
+              Fwd Pkts/s
+              Bwd Pkts/s
+              Pkt Len Min
+              Pkt Len Max
+              Pkt Len Mean
+              Pkt Len Std
+              Pkt Len Var
+              FIN Flag Cnt
+              SYN Flag Cnt
+              RST Flag Cnt
+              PSH Flag Cnt
+              ACK Flag Cnt
+              URG Flag Cnt
+              ECE Flag Cnt
+              Down/Up Ratio
+              Pkt Size Avg
+              Fwd Seg Size Avg
+              Bwd Seg Size Avg
+              Subflow Fwd Pkts
+              Subflow Fwd Byts
+              Subflow Bwd Pkts
+              Subflow Bwd Byts
+              Init Fwd Win Byts
+              Init Bwd Win Byts
+              Fwd Act Data Pkts
+              Fwd Seg Size Min
+              Active Mean
+              Active Std
+              Active Max
+              Active Min
+              Idle Mean
+              Idle Std
+              Idle Max
+              Idle Min
+              Label
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Dst Port <= 8042
+|   Protocol <= 0
+|   |   Flow IAT Min <= 47
+|   |   |   Fwd IAT Std <= 4314284.611
+|   |   |   |   Flow Duration <= 30820: Bot (4.0/1.0)
+|   |   |   |   Flow Duration > 30820: Benign (13.0)
+|   |   |   Fwd IAT Std > 4314284.611: Bot (14.0)
+|   |   Flow IAT Min > 47
+|   |   |   Fwd IAT Std <= 8292220.982: Benign (1275.0/1.0)
+|   |   |   Fwd IAT Std > 8292220.982
+|   |   |   |   Fwd IAT Mean <= 3275766.45: Bot (6.0)
+|   |   |   |   Fwd IAT Mean > 3275766.45: Benign (35.0)
+|   Protocol > 0: Benign (63153.0)
+Dst Port > 8042
+|   Dst Port <= 8080: Bot (28153.0/1.0)
+|   Dst Port > 8080
+|   |   RST Flag Cnt <= 0: Benign (11720.0)
+|   |   RST Flag Cnt > 0
+|   |   |   Down/Up Ratio <= 0: Bot (443.0)
+|   |   |   Down/Up Ratio > 0: Benign (42.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+
+Time taken to build model: 6.87 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 10.49 seconds
+
+=== Summary ===
+
+Correctly Classified Instances     1048451               99.9882 %
+Incorrectly Classified Instances       124                0.0118 %
+Kappa statistic                          0.9997
+Mean absolute error                      0.0001
+Root mean squared error                  0.0106
+Relative absolute error                  0.0346 %
+Root relative squared error              2.3816 %
+Total Number of Instances          1048575     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Benign
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     Bot
+Weighted Avg.    1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 762324     60 |      a = Benign
+     64 286127 |      b = Bot
+
